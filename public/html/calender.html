@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/calender.css">
+    <title>Calender</title>
 </head>
 <body>
-    
+    <header>
+        <h3>Mock Data</h3>
+        <h5>Mark Tyson</h5>
+    </header>
+    <main>
+        <div class="calenderHeader">
+            <h1>Calender</h1>
+            <div class="month">
+                <img class="arrows" src="../css/images/keyboard-left-arrow-button.svg" alt="left-arrow" onclick="prevMonth()">
+                <span id="month"></span>
+                <img class="arrows" src="../css/images/keyboard-right-arrow-button.svg" alt="right-branch" onclick="nextMonth()">
+            </div>
+        </div>
+        <div class="calender">
+            <div class="month-grid">
+                <div class="date-grid" onclick="dayInput()"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        
+    </script>
 </body>
 </html>
