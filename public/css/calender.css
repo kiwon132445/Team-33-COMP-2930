@@ -12,8 +12,7 @@ header img {
 .calenderHeader {
     width:100%;
     display:flex;
-    flex-direction: column;
-    align-content: center;
+    justify-content: center;
 }
 
 .calenderHeader h1 {
@@ -23,11 +22,31 @@ header img {
     margin-top:10pt;
     margin-bottom:10pt;
 }
+#calender {
+    margin:5pt;
+}
+.schedule {
+    margin:10pt;
+}
+.schedule form {
+    display:flex;
+    flex-direction: column;
+    width:300pt;
+}
+.schedule form .submit {
+    width:20%;
+}
+.textField {
+    margin-top:10pt;
+    width:300pt;
+    height:100pt;
+}
 
 
 /*Calender jquery mods*/
 #datepicker {
-    margin:5pt;
+    margin-bottom:5pt;
+    width:100%;
 }
 
 .ui-datepicker {
