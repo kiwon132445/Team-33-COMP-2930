@@ -6,10 +6,10 @@ function signUp()
   var userName = document.getElementById("nameTextFieldSignUp").value;
 
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-  function(user) {
+  function makeuser (user) {
     var user = firebase.auth().currentUser;
     setUserInfo(userName, userEmail, user.uid)
-  })
+  }
   
 }
 
@@ -17,7 +17,7 @@ function setUserInfo(username, email, uid)
 {
   var userId = firebase.auth().currentUser.uid;
   var ref = firebase.database().ref();
-  var userRef = ref.child("Users").child(A001);
+  var userRef = ref.child("users").child(login);
 
   userRef.set({
     username: username,
