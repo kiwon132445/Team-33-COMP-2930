@@ -1,0 +1,64 @@
+<html>
+
+  <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="NavigationPage.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navbar.css" />
+    <link type="text/css" rel="stylesheet" href="../css/login.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="../js/setup_firebase.js"></script>
+    <script src="../js/signup_function.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+        <img class="logo" src="..\assets\logo2.png">
+        <p class="titleword"></p>
+      </div>
+      <div class="line"></div>
+      <nav id="navbar">
+        <ul>
+          <li><a href=navigation.html class="navitext">
+              <div class="home">Home</div>
+            </a></li>
+          <li><a href=goals.html class="navitext">
+              <div class="profile">Profile</div>
+            </a></li>
+          <li><a href=results.html class="navitext">
+              <div class="search">Search</div>
+            </a></li>
+          <li><a href=guides.html class="navitext">
+              <div class="guide">Guides</div>
+            </a></li>
+        </ul>
+      </nav>
+      <script src="../javascript/hover.js"></script>
+    </header>
+
+    <div class="main-div" id="login_div">
+      <h1 class="header1">Clientry</h1>
+      <h2 class="header2"> CRM</h2>
+      <h2 class="header3"> Placeholder </h2>
+      <br><br>
+      <form>
+        <input type="email" placeholder="Email..." id="email_field">
+        <input type="password" placeholder="Password..." id="password_field">
+      </form>
+      <button onclick="login()"> Login to your Account </button>
+      <button onclick="signup()"> Sign Up </button>
+      
+    </div>
+
+    <div id="signup">
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
+    </div>
+
+  </body>
+
+</html>

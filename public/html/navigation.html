@@ -1,0 +1,119 @@
+<!DOCTYPE Html>
+<html>
+
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="../js/setup_firebase.js"></script>
+    <script src="../js/create_user.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="../js/greet_user.js"></script>
+    <script src="../js/navi.js"></script>
+    <script src="../js/signup_function.js"></script>
+    <script src="../js/logout_function.js"></script>
+    <script src="../js/kickout.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <img class="logo" src="..\assets\logo2.png">
+            <p class="titleword">Campus Caterer</p>
+        </div>
+        <div class="test"></div>
+        <div class="line"></div>
+
+        <nav id="navbar">
+
+            <ul>
+                <li><a href=navigation.html class="navitext">
+                        <div class="home">Home</div>
+                    </a></li>
+                <li><a href=goals.html class="navitext">
+                        <div class="profile">Goals</div>
+                    </a></li>
+                <li class="rest"><a href=results.html class="navitext">
+                        <div class="search">Restaurants</div>
+                    </a></li>
+                <li><a href=guides.html class="navitext">
+                        <div class="guide">Guides</div>
+                    </a></li>
+            </ul>
+        </nav>
+        <script>
+            $(".home").hover(function () {
+                $(".home").css("color", "white");
+            },
+                function () {
+                    $(".home").css("color", "#484747");
+                });
+            $(".profile").hover(function () {
+                $(".profile").css("color", "white");
+            },
+                function () {
+                    $(".profile").css("color", "#484747");
+                });
+            $(".search").hover(function () {
+                $(".search").css("color", "white");
+            },
+                function () {
+                    $(".search").css("color", "#484747");
+                });
+            $(".guide").hover(function () {
+                $(".guide").css("color", "white");
+            },
+                function () {
+                    $(".guide").css("color", "#484747");
+                });
+        </script>
+    </header>
+
+    <section class="container">
+        <button onclick="logout()"> Logout </button>
+        <div id="greeting">Hello, <span id="username"></span>!</div>
+
+        <a href="goals.html">
+            <div id="box1cover">
+                <div class="box1">
+                    <p class="steps3"><span> Step 1: </span> </p>
+                    <h5 class="box1title">My Goals</h5>
+                    <img class="img1" src="..\assets\leaf.png" alt="failed">
+                    <p class="boxtext">Choose your goals to get results.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="results.html">
+            <div id="box2cover">
+                <div class="box2">
+                    <p class="steps2"><span> Step 2: </span> </p>
+                    <h5 class="box2title">Find Food <br>For Me</h5>
+                    <img class="img2" src="..\assets\leaf.png" alt="failed">
+                    <p class="boxtext">View restaurants for me.</p>
+                </div>
+            </div>
+        </a>
+        <a href="guides.html">
+            <div id="box3cover">
+                <div class="box3">
+                    <p class="steps1"><span> Step 3: </span> </p>
+                    <h5 class="box3title">Find Guides For Me</h5>
+                    <img class="img3" src="..\assets\leaf.png" alt="failed">
+                    <p class="boxtext">View my food guides.</p>
+                </div>
+            </div>
+        </a>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="botline"></div>
+        </div>
+    </footer>
+</body>
+
+</html>
