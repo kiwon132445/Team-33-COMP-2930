@@ -15,20 +15,20 @@ header img {
     cursor: pointer;
     background-color:white;
 }
-.calenderHeader {
+.calendarHeader {
     width:100%;
     display:flex;
     justify-content: center;
 }
 
-.calenderHeader h1 {
+.calendarHeader h1 {
     text-align: center;
     color:white;
     font-size:40pt;
     margin-top:10pt;
     margin-bottom:10pt;
 }
-#calender {
+#calendar {
     margin:5pt;
 }
 .schedule {
@@ -51,7 +51,7 @@ textarea{
 }
 
 
-/*Calender jquery mods*/
+/*calendar jquery mods*/
 #datepicker {
     margin-bottom:5pt;
     width:100%;
