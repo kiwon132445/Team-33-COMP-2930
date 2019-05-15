@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <img src="../css/images/keyboard-left-arrow-button.svg" alt="">
+        <img src="../css/images/keyboard-left-arrow-button.svg" alt="back arrow">
     </header>
     <main>
         <div class="calenderHeader">
@@ -21,8 +21,16 @@
             <div id="datepicker"></div>
             <input id="dateInput" value="Selected Date" type="text">
         </div>
-        
+        <div class="scedule">
+            <!--Get value from database if existing-->
+            <input type="text" readonly>
+            <form>
+                <input class="textField" type="text" name="newUserSchedule">
+                <input type="submit" value="submit">
+            </form>
+        </div>
     </main>
+
     <script>
         $( function() {
         $( "#datepicker" ).datepicker({
