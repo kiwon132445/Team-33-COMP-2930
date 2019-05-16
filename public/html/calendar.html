@@ -2,34 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/calendar.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Calendar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
 </head>
 <body>
-    <header>
-        <img src="../css/images/white-arrow-icon-png-14.jpg" alt="back arrow">
-    </header>
-    <main>
-        <div class="calendarHeader">
-            <h1>Calendar</h1>
-        </div>
-        <div id="calendar">
-            <div id="datepicker"></div>
+    <div id="container">
+        <header>
+            <img src="../css/images/white-arrow-icon-png-14.jpg" alt="back arrow">
+        </header>
+
+        <main>
+            <div class="calendarHeader">
+                <h3>Calendar</h3>
+            </div>
+            <div id="calendar">
+                <div id="datepicker"></div>
                 <input id="dateInput" value="Selected Date" type="text" disabled>
-        </div>
-    </main>
+            </div>
+        </main>
+
+        <footer>
+                <img id="AddEventButton" src="../static/images/plus_hollow.svg">
+        </footer>
+    </div>
 
     <script>
         $( function() {
         $( "#datepicker" ).datepicker({
             onSelect: function(dateText, inst) {
-            $("#dateInput").val(dateText);
-            }
-        });
+                var date = $("#dateInput").val(dateText);
+            },
+            dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            firstDay: 0,
+            showOtherMonths: true,
+            dateFormat: "d M y"
+            });
         });
     </script>
 </body>
