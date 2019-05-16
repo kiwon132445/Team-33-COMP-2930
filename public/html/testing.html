@@ -1,0 +1,36 @@
+<html>
+<head>
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/main.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "../js/events.js"></script>
+</head>
+
+<body>
+    <div id = "container">
+     <div id = "trigger"></div>
+          <div id ="eventpanel">
+               <form id = "forms">                   
+                    <label for="fname">EVENT NAME</label>
+                    <input type="text" id="ename" name="eventname" placeholder="Name Here" value=""> 
+               
+                    <label for="start">START TIME</label>
+                    <input type="time" id="start" name="starttime" value="00:00">
+               
+                    <label for="end">END TIME</label>
+                    <input type="time" id="end" name="endtime" value="12:00">
+               
+                    <label for="location">LOCATION</label>
+                    <input type="text" id="location" name="locationbox" placeholder="Location Here" value="Location">
+               
+                    <label for="comment">COMMENTS</label>
+                    <textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
+               
+                    <input type="submit" id="subbutton" value="SUBMIT">                                 
+               </form>
+          </div>
+    </div>
+    
+</body>
+
+</html>
