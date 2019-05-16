@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="NavigationPage.css" />
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <link type="text/css" rel="stylesheet" href="../css/navbar.css" />
     <link type="text/css" rel="stylesheet" href="../css/login.css" />
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <script src="../js/setup_firebase.js"></script>
@@ -15,17 +14,11 @@
   </head>
 
   <body>
-    <header>
-
-        
-
-     
-      <script src="../javascript/hover.js"></script>
-    </header>
-
     <div class="main-div" id="login_div">
-      <img class="logo" src="..\assets\clientry.png">
-      <h1 class="header1"> lientry</h1>
+    <div class="logoDiv">
+        <img class="logo" src="../assets/clientry.png" style="margin-top: -30px">
+        <h1 class="header1"> lientry</h1>
+    </div>
       <h2 class="header2"> CRM</h2>
       <h2 class="header3"> Placeholder </h2>
       <br><br>
@@ -34,7 +27,7 @@
         <input type="password" placeholder="Password..." id="password_field">
       </form>
       <button onclick="login()"> Login to your Account </button>
-      <button onclick="signup()"> Sign Up </button>
+      
       
     </div>
 
@@ -44,5 +37,9 @@
     </div>
 
   </body>
+
+  <footer> 
+      <p> Don't have an Account? <span onclick="signup()"> Sign Up </span> </p>
+  </footer>
 
 </html>
