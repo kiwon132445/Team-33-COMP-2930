@@ -1,3 +1,4 @@
+
 html {
     margin: auto;
     padding: auto;
@@ -135,7 +136,6 @@ table {
 .ui-datepicker-title {
     text-align: center;
     font-size: 14pt;
-
 }
 
 .ui-datepicker-month {
@@ -221,7 +221,6 @@ table {
       border: 1px solid whitesmoke;
       height:50px;
       width:50px;
-
 }
 
 .ui-datepicker-calendar .ui-state-hover {
@@ -249,4 +248,3 @@ table {
     background: whitesmoke;
     color: #c7c7c7;
 }
-
