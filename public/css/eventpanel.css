@@ -1,42 +1,30 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-}
-
 #container {
-    width: 100%;
-    height: 100%;
     position: relative;
 }
 
-#eventpanel {  
-    height: 100%; 
-    width: 400px;    
+.eventpanel {
+    height:100%; 
+    width: 25%;    
     background-color: silver;
-    display:flex;
     flex-wrap: wrap;
-    font-size: 35px;
+    font-size: 25pt;
     font-family: Roboto, sans-serif;
     color: white;
     position: absolute;
     z-index:5;
-    bottom: 0;
     right: 0;
     margin: 0;
     border: none;
 }
 form {
     width: 100%;
-    height: 100%;
-    margin-top: -10px;
-    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.eventpanel img {
+    width:20pt;
+    height:20pt;
 }
 input {
     width: 85%;
@@ -46,6 +34,8 @@ input {
     border-radius: 4px;
     padding: 2px;
     margin-bottom: 20px;
+    margin:0;
+    margin-bottom: 10pt;
 }
 label {
     display: block;
@@ -55,6 +45,7 @@ textarea {
     height: 90px;
     margin-bottom: 20px;
     font-family: Roboto, sans-serif;
+    resize: none
 }
 #subbutton {
     border-radius: 4px;
@@ -62,4 +53,26 @@ textarea {
     color: white;
     border: none;
     height: 40px;
+    margin:0;
+}
+.closeButton {
+    float:right;
+    margin:5pt;
+    cursor: pointer;
+}
+
+
+/*phone media query*/
+@media screen and (max-width: 900px) {
+    .eventpanel {
+        width:100%;
+    }
+    .mobileDisplay {
+        display:none;
+    }
+}
+@media screen and (min-width: 900px) {
+    .closeButton {
+        display:none;
+    }
 }

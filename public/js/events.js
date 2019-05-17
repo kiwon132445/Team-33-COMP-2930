@@ -18,25 +18,23 @@ $("#forms").submit(function(event) {
 var dateObject = $('#datepicker').datepicker('getDate'); 
 console.log(dateObject)
 var pieces = dateText.split('/');
-        $('#day').val(pieces[0]);
-        $('#month').val(pieces[1]);
-        $('#year').val(pieces[2]);
 
 //Function to write Form Data into Firebase
   var str = makeid(10)
   console.log(str)
   var firebase = app_firebase;  
   var dB = firebase.database();
+
   //var userId = firebase.auth().currentUser.uid;
   var userId = "0A8DicAbipMRCTWJ0opoctqoGtk2"
  
   dB.ref('users/' + userId + '/eventsCreated').set({
-    1: str
+    dynamic: str
   })
   dB.ref('events/' + str).set({
-    year: "2019",
-    month: "5",
-    day: "17",
+    year: pieces[0],
+    month: pieces[1],
+    day: pieces[2],
     eventname: arraylist[0].value,
     eventStartTime: arraylist[1].value,
     eventEndTime: arraylist[2].value,
@@ -46,7 +44,7 @@ var pieces = dateText.split('/');
 //Function for Event Panel Sliding Animation
 var trigbutton = $('#trigger');
 $(trigbutton).click(function (event) {
-  var menu = $('#eventpanel');
+  var menu = $('.eventpanel');
   var showMenu = false;
   var menuAnimSlideIn = {"right": "-400", "easing": "swing"};
   var menuAnimSlideOut = {"right": "0", "easing": "swing"};

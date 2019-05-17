@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/eventpanel.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Calendar</title>
@@ -13,6 +13,7 @@
         @import url('https://fonts.googleapis.com/css?family=Roboto');
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id="mainCalendar">
@@ -24,68 +25,37 @@
                 <div id="datepicker"></div>
                 <input id="dateInput" value="Selected Date" type="text" disabled>
             </div>
-            <div id="addButton">
+            <div class="addButton">
                 <img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule">
             </div>
         </div>
-
+        <div class="eventpanel mobileDisplay">
+                <img class="closeButton" src="../css/images/x-button.png" alt="close event creation">
+                <form id = "forms">                   
+                     <label for="fname">EVENT NAME</label>
+                     <input type="text" id="fname" name="eventname" value="Name"> 
+                
+                     <label for="start">START TIME</label>
+                     <input type="time" id="start" name="starttime" value="00:00">
+                
+                     <label for="end">END TIME</label>
+                     <input type="time" id="end" name="endtime" value="12:00">
+                
+                     <label for="location">LOCATION</label>
+                     <input type="text" id="location" name="locationbox" value="Location">
+                
+                     <label for="comment">COMMENTS</label>
+                     <textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
+                
+                     <input type="submit" id="subbutton" value="SUBMIT">                                 
+                </form>
+        </div>
         
     </div>
-=======
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/calendar.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../css/eventpanel.css">    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <title>Calendar</title>
-</head>
-<body>
-    <header>
-        <img src="../css/images/white-arrow-icon-png-14.jpg" alt="back arrow">
-    </header>
-    <main>
-        <div class="calendarHeader">
-            <h1>Calendar</h1>
-        </div>
-        <div id="calendar">
-            <div id="datepicker"></div>
-                <input id="dateInput" value="Selected Date" type="text" disabled>
-        </div>
-    </main>
-
-    <div id = "container">
-                 <div id ="eventpanel">
-                      <form id = "forms">                   
-                           <label for="fname">EVENT NAME</label>
-                           <input type="text" id="ename" name="eventname" value="Name"> 
-                      
-                           <label for="start">START TIME</label>
-                           <input type="time" id="start" name="starttime" value="00:00">
-                      
-                           <label for="end">END TIME</label>
-                           <input type="time" id="end" name="endtime" value="12:00">
-                      
-                           <label for="location">LOCATION</label>
-                           <input type="text" id="location" name="locationbox" value="Location">
-                      
-                           <label for="comment">COMMENTS</label>
-                           <textarea id="comment" name="commentbox" placeholder="Write something.." value = "Comments"></textarea>                                   
-                      
-                           <input type="submit" id="subbutton" value="SUBMIT">                                 
-                      </form>
-                 </div>
-           </div>
-           <script src = "../js/events.js"></script>
->>>>>>> k+park
-
     <script>
         $( function() {
         $( "#datepicker" ).datepicker({
             onSelect: function(dateText, inst) {
-<<<<<<< HEAD
                 var date = $("#dateInput").val(dateText);
             },
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -93,26 +63,13 @@
             showOtherMonths: true,
             dateFormat: "d M y"
             });
-=======
-            var dateObject = $(this).datepicker('getDate'); 
-            console.log(dateObject)
-            $("#dateInput").val(dateText);            
-            var menu = $('#eventpanel');
-            var showMenu = true;
-            var menuAnimSlideIn = {"right": "-400", "easing": "swing"};
-            var menuAnimSlideOut = {"right": "0", "easing": "swing"};
-                if (!showMenu) {
-                    showMenu = true;
-                    $(menu).animate(menuAnimSlideIn, 100);
-                } else {
-                    showMenu = false;
-                    $(menu).animate(menuAnimSlideOut, 100);
-                }
-
-            }
         });
->>>>>>> k+park
-        });
+        $('#AddEventButton').click(function () {
+            $('.eventpanel').removeClass('mobileDisplay');
+        })
+        $('.closeButton').click(function() {
+            $('.eventpanel').addClass('mobileDisplay');
+        })
     </script>
 </body>
 </html>
