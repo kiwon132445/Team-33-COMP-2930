@@ -1,9 +1,9 @@
 
 .container{
-    margin-top: 100px;
+    margin-top: 40px;
 }
 .logoutbutton {
-    background-color: #A4D4FF;
+    background-color: #42AFE6 ;
     font-weight: bold;
     padding: 14px 20px;
     margin: 8px 0;
@@ -16,7 +16,7 @@
     border-radius: 25px;
 }
 .logoutbutton:hover {
-    background-color: #42AFE6;
+    background-color: #040730;
     color: white;
     font-weight: bold;
 }
@@ -26,15 +26,11 @@ body{
     color: #3f3f3f;
 }
 #greeting {
-  
-  
-    
+
     padding-top: 15px;
     padding-left: 10px;
     margin: auto;
     text-align: right;
-
-
 }
 
 footer{
@@ -49,11 +45,11 @@ footer{
 
 .footbutton {
     text-align: center;
-    background-color: #A4D4FF;
+    background-color:  #42AFE6 ; 
     font-weight: bold;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 90%;
     color: #484747;
     padding: 14px 20px;
     border-radius: 25px;
@@ -62,13 +58,25 @@ footer{
     justify-content: center;
 }
 .footbutton:hover {
-    background-color: #42AFE6;
+    background-color:#040730;
     color: white;
     font-weight: bold;
 }
 
 .home{
 
-    margin-top: 100px;
-    margin-left: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
+
+@media screen and (max-width: 1200px){
+
+.logoutbutton {
+
+    width: 30%;
+}
+
+
+
+}
+

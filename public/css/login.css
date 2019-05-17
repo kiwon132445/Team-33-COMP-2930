@@ -3,31 +3,14 @@ body{
   background-color: #040730;
   margin: 0;
 }
-.header1{
-  margin: auto;
-  text-align: center;
-  margin-top: 40px;
-  font-size:80px;
-  color:  #42AFE6;
-  margin-bottom: -10px;
-  padding-bottom: 10px;
-  margin-left: 30px;
-  margin: -4px;
-  margin-right: 90px;
 
- 
-}
 .header2{
   margin: auto;
   text-align: center;
   font-size: 20px;
-  color: white ;
-}
-.header3{
-  margin:auto;
-  text-align: center;
-  font-size: 20px;
-  color: white ;
+  color: #42AFE6;
+  margin-right: 2px;
+  margin-left: 2px;
 }
 
 #firebaseui-auth-container{
@@ -60,8 +43,7 @@ span{
 
 .logo{
   background-color: #040730;
-  height: 80px;
-  width: 80px;
+  
 
 }
 
@@ -135,14 +117,15 @@ footer{
 
 @media screen and (max-width: 1200px){
  
- .main-div{
-  margin-top: 300px
 
- }
+input[type=password], select {
+  width: 60%;
+}
 
- body{
-   zoom:150%;
- }
+input[type=email], select {
+  width: 60%;
+
+  }
 
 .header1{
   margin-right: 40px;
