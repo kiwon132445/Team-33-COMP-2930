@@ -1,0 +1,38 @@
+<!DOCTYPE Html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="../js/setup_firebase.js"></script>
+    <script src="../js/create_user.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="../js/greet_user.js"></script>
+    <script src="../js/logout_function.js"></script>
+    <script src="../js/kickout.js"></script>
+</head>
+
+<body>
+    
+    <div class="container">
+        <button class="logoutbutton" onclick="logout()"> Logout </button>
+        <div id="greeting"><h1 id="username"></h1>
+        </div>
+
+        <h1 class="home"> Home </h1>
+        
+        <div class="dbInfo">
+
+        </div>
+    </div>
+    <footer>
+        <button class ="footbutton"> Create Event</button>
+    </footer>
+</body>
+
+</html>
