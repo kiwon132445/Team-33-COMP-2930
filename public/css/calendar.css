@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> k+park
 html {
     margin: auto;
     padding: auto;
@@ -7,6 +10,13 @@ html {
     width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+#shit {
+    font-size: 50pt;
+}
+
+>>>>>>> k+park
 body {
     font-family:Roboto;
     margin: 0;
@@ -16,11 +26,19 @@ body {
     overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 #mainCalendar {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     width:100%;
+=======
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:100% - 400px;
+>>>>>>> k+park
     height: 100%;
 }
 
@@ -32,7 +50,11 @@ body {
     height: 100%;
 }
 
+<<<<<<< HEAD
 #backArrow {
+=======
+header img {
+>>>>>>> k+park
     margin:5pt;
     width:20pt;
     height:20pt;
@@ -40,7 +62,13 @@ body {
     background-color:white;
 }
 .calendarHeader {
+<<<<<<< HEAD
     width:75%;
+=======
+    width:100%;
+    display:flex;
+    justify-content: center;
+>>>>>>> k+park
 }
 
 .calendarHeader h3 {
@@ -55,6 +83,10 @@ body {
     width: 75%;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    justify-content: center;
+>>>>>>> k+park
 }
 #calendar input {
     border: none;
@@ -75,7 +107,11 @@ body {
     width:20%;
 }
 
+<<<<<<< HEAD
 #addButton {
+=======
+footer {
+>>>>>>> k+park
     bottom: 0;
     left: 0;
     height: 64px;
@@ -83,9 +119,15 @@ body {
     z-index: 2;
     position: fixed;
     margin: auto;
+<<<<<<< HEAD
     margin-bottom:10pt;
     display: flex;
     justify-content: center;
+=======
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+>>>>>>> k+park
 }
 
 #AddEventButton {
@@ -101,6 +143,7 @@ footer img:hover{
     content: url(../static/images/plus_full.svg)
 }
 
+<<<<<<< HEAD
 /*phone media query*/
 @media screen and (max-width: 480px) {
     .calendarHeader, footer, #calendar {
@@ -113,6 +156,8 @@ footer img:hover{
     }
 }
 
+=======
+>>>>>>> k+park
 /*calendar jquery mods*/
 
 table {
@@ -145,6 +190,10 @@ table {
 .ui-datepicker-title {
     text-align: center;
     font-size: 14pt;
+<<<<<<< HEAD
+=======
+
+>>>>>>> k+park
 }
 
 .ui-datepicker-month {
@@ -230,6 +279,10 @@ table {
       border: 1px solid whitesmoke;
       height:50px;
       width:50px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> k+park
 }
 
 .ui-datepicker-calendar .ui-state-hover {
@@ -256,4 +309,8 @@ table {
 .ui-datepicker-unselectable .ui-state-default {
     background: whitesmoke;
     color: #c7c7c7;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> k+park

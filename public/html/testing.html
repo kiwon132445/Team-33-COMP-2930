@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Event Panel Test</title>
+     <meta charset="utf-8"/>
+     <meta content="width=device-width, initial-scale=1" name="viewport" />
+     <!--Firebase Script-->
+     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+     <script src="../js/key.js"></script>
+     <!--CSS Script-->
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="../css/eventpanel.css">  
+     <!--jQuery-->  
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
+     
+</head>
+
+<body>
+    <div id = "container">
+     <div id = "trigger"></div>
+          <div id ="eventpanel">
+               <form id = "forms">                   
+                    <label for="fname">EVENT NAME</label>
+                    <input type="text" id="ename" name="eventname" value="Name"> 
+               
+                    <label for="start">START TIME</label>
+                    <input type="time" id="start" name="starttime" value="00:00">
+               
+                    <label for="end">END TIME</label>
+                    <input type="time" id="end" name="endtime" value="12:00">
+               
+                    <label for="location">LOCATION</label>
+                    <input type="text" id="location" name="locationbox" value="Location">
+               
+                    <label for="comment">COMMENTS</label>
+                    <textarea id="comment" name="commentbox" placeholder="Write something.." value = "Comments"></textarea>                                   
+               
+                    <input type="submit" id="subbutton" value="SUBMIT">                                 
+               </form>
+          </div>
+    </div>    
+    <script src = "../js/events.js"></script>    
+</body>
+
+</html>
