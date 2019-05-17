@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-main {
+#mainCalendar {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -79,14 +79,13 @@ main {
     bottom: 0;
     left: 0;
     height: 64px;
-    width: 75%;
+    width: 100%;
     z-index: 2;
     position: fixed;
     margin: auto;
     margin-bottom:10pt;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #AddEventButton {
