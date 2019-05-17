@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Calendar</title>
@@ -14,12 +15,39 @@
 </head>
 <body>
     <div id="container">
-        <header>
-            
-        </header>
+        <div class="navbar">    
+            <div class="desktopNav">
+                <ul class="leftnav">
+                    <li><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                    <li><h3 class="home"> Home </h3></li>
+                    <li><h3 class="calendar">Calendar</h3></li>
+                    <li><h3 class="aboutus">About Us</h3></li>
+                </ul>
+                <ul class="rightnav">
+                    <li><h3 class="username">bob</h3></li>
+                    <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
+                </ul>
+            </div>
+                            
+            <div class="mobileNav">
+                <img src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
+                <img src="../static/images/menu.png" alt="menu" class="menuButton">
+            </div>
+                
+            <div class="menuMobile">
+                <ul class="menu">
+                    <li><h3 class="home"> Home </h3></li>
+                    <li><h3 class="calendar">Calendar</h3></li>
+                    <li><h3 class="aboutus">About Us</h3></li>
+                    <li><h3 class="username">bob</h3></li>
+                    <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+                
 
         <main>
-            <img id="backArrow" src="../css/images/white-arrow-icon-png-14.jpg" alt="back arrow">
             <div class="calendarHeader">
                 <h3>Calendar</h3>
             </div>

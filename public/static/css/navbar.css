@@ -69,7 +69,14 @@ ul {
     font-size: 14pt;
     cursor: pointer;
 }
-
+hr{
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:black;
+    height: 1px;
+}
 /*Mobile Media Query*/
 @media screen and (max-width: 720px) {
     .desktopNav{
