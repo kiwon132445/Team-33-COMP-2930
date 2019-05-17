@@ -1,6 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -14,16 +16,9 @@ body {
     position: relative;
 }
 
-#trigger {
-    height: 100%;    
-    width: 100%;
-    background-color: darkslategray;
-    z-index: 0;    
-}
-
 #eventpanel {  
     height: 100%; 
-    width: 25%;    
+    width: 400px;    
     background-color: silver;
     display:flex;
     flex-wrap: wrap;
