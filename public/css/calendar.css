@@ -75,7 +75,7 @@ main {
     width:20%;
 }
 
-footer {
+#addButton {
     bottom: 0;
     left: 0;
     height: 64px;
