@@ -46,6 +46,15 @@ span{
   
 
 }
+/*Logo animation*/
+@keyframes spin {
+  100% {
+      transform:rotate(360deg);
+  }
+}
+.imageRotate {
+  animation:spin 2s linear 
+}
 
 
 
