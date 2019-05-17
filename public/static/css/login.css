@@ -30,12 +30,13 @@ body{
 
 .main-div{
   display: flex;
-  flex-direction: column;"
+  flex-direction: column;
 }
 
 span{
   color: #42AFE6;
   text-decoration: underline;
+  cursor: pointer;
 }
 #signup{
   display:block;
@@ -55,8 +56,6 @@ span{
 .imageRotate {
   animation:spin 2s linear 
 }
-
-
 
 input[type=email], select {
   width: 30%;
@@ -91,8 +90,6 @@ input[type=password], select {
   color: white;
 }
 button {
-  background-color: 
-  color: white;
   cursor: pointer;
   display:block;
   margin: auto;
@@ -103,7 +100,6 @@ button {
   width: 300px;
   font-size: 16px;
   text-align: center;
-  vertical-align: center;
 
 }
 button:hover {
@@ -126,7 +122,6 @@ footer{
 
 @media screen and (max-width: 1200px){
  
-
 input[type=password], select {
   width: 60%;
 }
@@ -139,6 +134,5 @@ input[type=email], select {
 .header1{
   margin-right: 40px;
 }
-
 
 }

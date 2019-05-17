@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../css/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/navigation.css" />
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
@@ -20,18 +20,23 @@
 <body>
     
     <div class="container">
-        <button class="logoutbutton" onclick="logout()"> Logout </button>
-        <div id="greeting"><h1 id="username"></h1>
+        <div id="homeTop">
+            <button class="logoutbutton" onclick="logout()"> Logout </button>
         </div>
+        
 
-        <h1 class="home"> Home </h1>
+        <div id="homeHeader">
+            <h1 class="home"> Home </h1>
+            <h1 id="username"></h1>
+        </div>
+        
         
         <div class="dbInfo">
 
         </div>
     </div>
     <footer>
-        <button class ="footbutton"> Create Event</button>
+        <img src="../static/images/plus_hollow.svg" class ="footbutton"></button>
     </footer>
 </body>
 
