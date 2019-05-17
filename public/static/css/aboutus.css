@@ -1,0 +1,44 @@
+ul {
+    list-style: none;
+}
+
+.imgandname {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imgandname img, .imgandname h3 {
+    padding: 10pt;
+}
+
+.imgandname img {
+    height: 100pt;
+    width: 100pt;
+    object-fit: contain;
+}
+
+.personInfo {
+    text-align: center;
+}
+#story {
+    text-align: center;
+}
+#story p {
+    font-size: 16pt;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#story img {
+    height: 75pt;
+}
+
+.aboutusInfo h1{
+    padding-left: 1em;
+}
+
+@media screen and (min-width: 720px) {
+    #aboutUsList li {
+        display: flex;
+    }
+}

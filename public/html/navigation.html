@@ -6,6 +6,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../static/css/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
@@ -20,16 +21,35 @@
 <body>
     
     <div class="container">
-        <div id="homeTop">
-            <button class="logoutbutton" onclick="logout()"> Logout </button>
-        </div>
+        <div class="navbar">    
+            <div class="desktopNav">
+                <ul class="leftnav">
+                    <li><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                    <li><h3 class="home"> Home </h3></li>
+                    <li><h3 class="calendar">Calendar</h3></li>
+                    <li><h3 class="aboutus">About Us</h3></li>
+                </ul>
+                <ul class="rightnav">
+                    <li><h3 class="username">bob</h3></li>
+                    <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
+                </ul>
+            </div>
+                    
+            <div class="mobileNav">
+                <img src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
+                <img src="../static/images/menu.png" alt="menu" class="menuButton">
+            </div>
         
-
-        <div id="homeHeader">
-            <h1 class="home"> Home </h1>
-            <h1 id="username"></h1>
+            <div class="menuMobile">
+                <ul class="menu">
+                    <li><h3 class="home"> Home </h3></li>
+                    <li><h3 class="calendar">Calendar</h3></li>
+                    <li><h3 class="aboutus">About Us</h3></li>
+                    <li><h3 class="username">bob</h3></li>
+                    <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
+                </ul>
+            </div>
         </div>
-        
         
         <div class="dbInfo">
 
