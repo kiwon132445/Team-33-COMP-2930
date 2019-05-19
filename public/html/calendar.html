@@ -9,6 +9,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/greet_user.js"></script>
+    <script src="../js/logout_function.js"></script>
+    <script src="../js/kickout.js"></script>
     <title>Calendar</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -47,8 +50,7 @@
         </div>
         <hr>
                 
-
-        <main>
+        <div id="mainCalendar">
             <div class="calendarHeader">
                 <h3>Calendar</h3>
             </div>
@@ -56,11 +58,12 @@
                 <div id="datepicker"></div>
                 <input id="dateInput" value="Selected Date" type="text" disabled>
             </div>
-        </main>
-
-        <footer>
+            <div id="addButton">
                 <img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule">
-        </footer>
+            </div>
+        </div>
+
+        
     </div>
 
     <script>
