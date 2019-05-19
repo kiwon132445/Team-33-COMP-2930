@@ -24,6 +24,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: white;
     color: #3f3f3f;
+    
 }
 #greeting {
 
@@ -67,6 +68,13 @@ footer{
 
     margin-top: 0px;
     margin-left: 0px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
 }
 
 @media screen and (max-width: 1200px){
