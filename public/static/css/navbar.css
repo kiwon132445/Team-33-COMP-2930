@@ -69,6 +69,11 @@ ul {
     font-size: 14pt;
     cursor: pointer;
 }
+
+.username:before {
+    content: 'Logged in as '
+}
+
 hr{
     border: 0;
     clear:both;
