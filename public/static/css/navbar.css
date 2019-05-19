@@ -70,7 +70,7 @@ ul {
     cursor: pointer;
 }
 
-.username:before {
+#username:before {
     content: 'Logged in as '
 }
 
@@ -97,10 +97,12 @@ hr{
     }
     .menuButton{
         float: right;
+        padding-right: 1em;
         cursor: pointer;
     }
     .clientryLogo {
         float: left;
+        padding-left: 1em;
         height: 50pt;
     }
     .menuMobile{
