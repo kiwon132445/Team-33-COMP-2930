@@ -17,9 +17,14 @@ authRef.onAuthStateChanged(function(user) {
             }
 
         else {
-            for (var i = 0; i < list.length; i++){
+            for (var i = 1; i < list.length; i++){
+                
+                
                 if (list[i] !== null){
+
                     var eventRef = firebase.database().ref().child('events/' + list[i]);
+
+                    let idOfEvent = list[i];                    
 
                     eventRef.on('value', snap => {
 
@@ -55,12 +60,32 @@ authRef.onAuthStateChanged(function(user) {
                         var node4 = document.createTextNode(list1.eventLocation);
                         createTd5.className += 'eventLocation'
                         createTd5.appendChild(node4);
+                        
+                        var createTd6 = document.createElement('li');
+                        var node5 = document.createTextNode(idOfEvent);
+                        createTd6.appendChild(node5);
+                        createTd6.className += 'eventID';
+
+                        var createTd7 = document.createElement('li');
+                        var editButton = new Image(20, 20);
+                        editButton.src = '../static/images/edit_hollow.svg';
+                        editButton.className += 'editButton'
+                        editButton.setAttribute("onclick", "editToggle()");
+                        var deleteButton = new Image(20, 20);
+                        deleteButton.src = '../static/images/delete_hollow.svg';
+                        deleteButton.className += 'deleteButton'
+                        deleteButton.setAttribute("onclick", "warningToggle()")
+                        createTd7.appendChild(deleteButton);
+                        createTd7.appendChild(editButton);
+                        createTd7.className += 'modifyButtons';
 
                         createTr.appendChild(createTd);
                         createTr.appendChild(createTd2);
                         createTr.appendChild(createTd3);
                         createTr.appendChild(createTd4);
                         createTr.appendChild(createTd5);
+                        createTr.appendChild(createTd6);
+                        createTr.appendChild(createTd7);
                         var element = document.getElementById('dbInfo');
                         element.prepend(createTr);
                     });

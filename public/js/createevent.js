@@ -33,9 +33,7 @@ authRef.onAuthStateChanged(function(user) {
       //Creates new event data key (with random string) under the user's "eventsCreated" node
       dB.ref('users/' + user.uid + '/eventsCreated').once('value', function(snapshot) {
         var childnum = snapshot.numChildren(); 
-        console.log(childnum)
-        console.log(str)
-        dB.ref('users/' + user.uid + '/eventsCreated').set({          
+        dB.ref('users/' + user.uid + '/eventsCreated').update({
           [childnum] : str
         })
       }); 
@@ -51,8 +49,7 @@ authRef.onAuthStateChanged(function(user) {
         eventLocation: arraylist[3].value,
         eventDetails: arraylist[4].value
       })  
-
-      $(".eventpanel").addClass("mobileDisplay");
+      $('.eventpanel').addClass('mobileDisplay');
   });
 
 

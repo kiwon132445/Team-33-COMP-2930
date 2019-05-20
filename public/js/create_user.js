@@ -7,7 +7,8 @@
         firebase.database().ref("users/"+user.uid).update(
     {
         "name":user.displayName, 
-        "email":user.email
+        "email":user.email,
+        "eventsCreated": [0, 'defaultEvent']
         });
     });
-})()
+})
