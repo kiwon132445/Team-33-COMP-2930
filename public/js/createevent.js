@@ -30,14 +30,12 @@ authRef.onAuthStateChanged(function(user) {
       var str = makeid(10)
       console.log(str)
     
-      //Counts how many events are there to give the new event the correct number
-      dB.ref('users/' + user.uid + '/eventsCreated').once("value").then(function(snapshot) {
-        var childnum = snapshot.numChildren(); 
-
-      });
       //Creates new event data key (with random string) under the user's "eventsCreated" node
       dB.ref('users/' + user.uid + '/eventsCreated').once('value', function(snapshot) {
-        dB.ref('users/' + user.uid + '/eventsCreated').set({
+        var childnum = snapshot.numChildren(); 
+        console.log(childnum)
+        console.log(str)
+        dB.ref('users/' + user.uid + '/eventsCreated').set({          
           [childnum] : str
         })
       }); 
@@ -53,6 +51,8 @@ authRef.onAuthStateChanged(function(user) {
         eventLocation: arraylist[3].value,
         eventDetails: arraylist[4].value
       })  
+
+      $(".eventpanel").addClass("mobileDisplay");
   });
 
 
