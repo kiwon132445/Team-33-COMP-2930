@@ -1,0 +1,34 @@
+body, html {
+    overflow-x: hidden;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    margin: auto;
+    margin-bottom:10pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footbutton {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+    width:75%;
+    height: 100%;
+}
+.footbutton:hover {
+    content: url(../images/plus_full.svg);
+}
