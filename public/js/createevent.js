@@ -1,7 +1,6 @@
 var firebase = app_firebase;  
 var dB = firebase.database();
-var userId = "0A8DicAbipMRCTWJ0opoctqoGtk2"
-//var userId = firebase.auth().currentUser.uid;
+var userId = firebase.auth().currentUser.uid;
 
 //Function to create Random String
 function makeid(length) {
@@ -33,15 +32,25 @@ $("#forms").submit(function(event) {
     //Associate New Random String to User 
     dB.ref('users/' + userId + '/eventsCreated').once("value").then(function(snapshot) {
       var childnum = snapshot.numChildren(); 
+
     });
-    
-    dB.ref('users/' + userId + '/eventsCreated').once('value', function(snapshot) {
-        console.log(last)
-        dB.ref('users/' + userId + '/eventsCreated').set(
-          {[childnum + 1] : str}
-        )
-      }
-    );   
+    //Checks if this user has any events
+    if (!dB.ref('users/' + userId).hasChild('eventsCreated')){
+      var newevents = dB.ref('users/' + userId).child('eventsCreated')
+      var newnewevents = newevents.push()
+      dB.ref('users/' + userId + '/eventsCreated').set({
+        '1': str
+        }        
+      )
+    }
+    else {
+      dB.ref('users/' + userId + '/eventsCreated').once('value', function(snapshot) {
+        dB.ref('users/' + userId + '/eventsCreated').set({
+          [childnum + 1] : str
+        })
+      } 
+    ); 
+    }  
     //Create New Key With Random String to Events Data With Calendar Data
     dB.ref('events/' + str).set({
       year: pieces[0],
