@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../static/css/calendar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
+
+    <!-- <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/eventpanel.css"> -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../js/navbar.js"></script>
@@ -17,6 +20,7 @@
         @import url('https://fonts.googleapis.com/css?family=Roboto');
     </style>
 </head>
+
 <body>
     <div id="container">
         <div class="navbar">    
@@ -58,14 +62,33 @@
                 <div id="datepicker"></div>
                 <input id="dateInput" value="Selected Date" type="text" disabled>
             </div>
-            <div id="addButton">
+            <div class="addButton">
                 <img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule">
             </div>
         </div>
-
+        <div class="eventpanel mobileDisplay">
+                <img class="closeButton" src="../css/images/x-button.png" alt="close event creation">
+                <form id = "forms">                   
+                     <label for="fname">EVENT NAME</label>
+                     <input type="text" id="fname" name="eventname" value="Name"> 
+                
+                     <label for="start">START TIME</label>
+                     <input type="time" id="start" name="starttime" value="00:00">
+                
+                     <label for="end">END TIME</label>
+                     <input type="time" id="end" name="endtime" value="12:00">
+                
+                     <label for="location">LOCATION</label>
+                     <input type="text" id="location" name="locationbox" value="Location">
+                
+                     <label for="comment">COMMENTS</label>
+                     <textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
+                
+                     <input type="submit" id="subbutton" value="SUBMIT">                                 
+                </form>
+        </div>
         
     </div>
-
     <script>
         $( function() {
         $( "#datepicker" ).datepicker({
@@ -78,6 +101,12 @@
             dateFormat: "d M y"
             });
         });
+        $('#AddEventButton').click(function () {
+            $('.eventpanel').removeClass('mobileDisplay');
+        })
+        $('.closeButton').click(function() {
+            $('.eventpanel').addClass('mobileDisplay');
+        })
     </script>
 </body>
 </html>
