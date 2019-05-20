@@ -70,9 +70,11 @@ authRef.onAuthStateChanged(function(user) {
                         var editButton = new Image(20, 20);
                         editButton.src = '../static/images/edit_hollow.svg';
                         editButton.className += 'editButton'
+                        editButton.setAttribute("onclick", "editToggle()");
                         var deleteButton = new Image(20, 20);
                         deleteButton.src = '../static/images/delete_hollow.svg';
                         deleteButton.className += 'deleteButton'
+                        deleteButton.setAttribute("onclick", "warningToggle()")
                         createTd7.appendChild(deleteButton);
                         createTd7.appendChild(editButton);
                         createTd7.className += 'modifyButtons';

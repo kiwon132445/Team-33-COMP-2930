@@ -1,5 +1,5 @@
-<!DOCTYPE Html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +20,7 @@
     <script src="../js/greet_user.js"></script>
     <script src="../js/logout_function.js"></script>
     <script src="../js/kickout.js"></script>
+    <script src="../js/panelEventFunction.js"></script>
     <script src="../js/displayEvents.js"></script>
     <title>Clientry</title>
 </head>
@@ -58,12 +59,50 @@
         </div>
         <hr>
         <h1>Your Events</h1>
-        <div id="dbInfo">
+        
+        
+        <div class="warningPanelCenter hide">
+            <div class="warningPanel">
+                <h3>Are You Sure You Wish To Delete This Event?</h3>
+                <div>
+                    <button>Yes</button>
+                    <button onclick="warningToggle();">No</button>
+                </div>
+            </div>
         </div>
-
+        <div class="editEvent">
+            <div class="editPanel">
+                <div onclick="editToggle()" class="closeButtonContainer">
+                    <img class="closeButton" 
+                        id="closePanelButton" 
+                        src="../static/images/keyboard-right-arrow-button.svg" 
+                        alt="close event creation">
+                </div>
+                <form id ="instantForm" autocomplete="off">                   
+                    <label for="fname">Event Name</label>
+                    <input type="text" id="fname" name="eventname" placeholder="Name"> 
+                    
+                    <label for="start">Start Time</label>
+                    <input type="time" id="start" name="starttime" value="00:00">
+                    
+                    <label for="end">End Time</label>
+                    <input type="time" id="end" name="endtime" value="12:00">
+                    
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="locationbox" placeholder="Location">
+                    
+                    <label for="comment">Description</label>
+                    <textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
+                    
+                    <input type="submit" id="subbutton" value="SUBMIT">                                 
+                </form>
+            </div>
+        </div>
+        <div id="dbInfo">
+            </div>
     </div>
     <footer>
-        <img onclick="toCalendar()" src="../static/images/plus_hollow.svg" class ="footbutton"></button>
+        <img onclick="toCalendar()" src="../static/images/plus_hollow.svg" class ="footbutton" alt="event button">
     </footer>
 </body>
 
