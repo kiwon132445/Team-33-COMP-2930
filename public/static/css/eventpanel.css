@@ -4,7 +4,7 @@
 
 .eventpanel {
     height:100%; 
-    width: 25%;    
+    width: 100%;    
     background-color: silver;
     flex-wrap: wrap;
     font-size: 25pt;
@@ -16,16 +16,19 @@
     margin: 0;
     border: none;
 }
+
 form {
     width: 100%;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
+
 .eventpanel img {
     width:20pt;
     height:20pt;
 }
+
 input {
     width: 85%;
     height: 35px;
@@ -37,9 +40,11 @@ input {
     margin:0;
     margin-bottom: 10pt;
 }
+
 label {
     display: block;
 }
+
 textarea {
     width: 85%;
     height: 90px;
@@ -47,6 +52,7 @@ textarea {
     font-family: Roboto, sans-serif;
     resize: none
 }
+
 #subbutton {
     border-radius: 4px;
     background: #0099ff;
@@ -55,24 +61,26 @@ textarea {
     height: 40px;
     margin:0;
 }
+
 .closeButton {
     float:right;
     margin:5pt;
     cursor: pointer;
 }
 
-
-/*phone media query*/
-@media screen and (max-width: 900px) {
+.mobileDisplay {
+    display:none;
+}
+/*mobile media query*/
+/* @media screen and (max-width: 900px) {
     .eventpanel {
         width:100%;
     }
-    .mobileDisplay {
-        display:none;
-    }
-}
-@media screen and (min-width: 900px) {
+} */
+
+/*Desktop media query*/
+/* @media screen and (min-width: 900px) {
     .closeButton {
         display:none;
     }
-}
+} */

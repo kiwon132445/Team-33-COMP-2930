@@ -83,7 +83,7 @@ hr{
     height: 1px;
 }
 /*Mobile Media Query*/
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
     .desktopNav{
         display: none;
     }
@@ -94,6 +94,7 @@ hr{
         align-items: center;
         justify-content: space-between;
         height: 75pt;
+        z-index: 5;
     }
     .menuButton{
         float: right;
@@ -127,7 +128,7 @@ hr{
 }
 
 /* Desktop Media Query */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 880px) {
     .desktopNav{
         display: block;
     }
