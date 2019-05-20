@@ -1,18 +1,15 @@
 var firebase = app_firebase;  
 var dB = firebase.database();
-var userId = firebase.auth().currentUser.uid;
+var authRef = firebase.auth();
 
-//Function to load edit form panel with previous event values.
-function loadformEvent() {
-  //Gets the Key of the Event
-  var parenta = this.parentElement;
-  var parentb = parenta.parentElement;
-  var parentc = parentb.childen[5];
-  var refid = parentc.children[0];
-  var eventpath = dB.ref('events/' + refid);
+//Function to set Edit Panel with previous details of event 'x'
+function editEvent(x) {
+  //Get previous details
+  var eventpath = dB.ref('events/' + x);
   eventpath.on('value', snap => {
     eventRef = JSON.stringify(snap.val(), null, 3);
     var editlist = JSON.parse(eventRef);
+    //Apply previous details to Edit Panel
     var editform = document.getElementById('instantForm')
     editform.elements[0].value = editlist.eventname;
     editform.elements[1].value = editlist.eventStartTime;
@@ -20,14 +17,13 @@ function loadformEvent() {
     editform.elements[3].value = editlist.eventLocation;
     editform.elements[4].value = editlist.eventDetails;
     });
-  //Gets the Form Id to link its Submit Button to this Function
-  //Pressing Submit will update the Event's Details with the new values in the Form
+  //Submit Function to update data
   $("#instantform").submit(function(event) {
     var newlist = {};
     newlist = $(this).serializeArray();
     event.preventDefault();
 
-    dB.ref('events/' + refid).update({
+    dB.ref('events/' + x).update({
       eventname: newlist[0].value,
       eventStartTime: newlist[1].value,
       eventEndTime: newlist[2].value,
@@ -38,13 +34,17 @@ function loadformEvent() {
 };  
 
 
-
-function deleteEvent() {
-    var parentd = this.parentElement;
-    var parente = parentd.parentElement;
-    var refid = parente.childen[5].className;
-    var eventpath = dB.ref('events/' + refid);
-    var deletelocation = dB.ref('events');
-    deletelocation.remove(delstr);
-
+//Function to delete data for event 'x'
+function deleteEvent(x) {
+    //Delete the event from 'events'
+    var deleteevent = dB.ref('events');
+    deleteevent.remove(x);
+    //Delete the event from 'users'
+    var deleteuserevent = db.ref('users/' + user.uid + '/eventsCreated');
+    deleteuserevent.orderByChild().equalTo(x)
+    .once('value').then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+        deleteuserevent.child(childSnapshot.key).remove();
+    });
+});
 }
