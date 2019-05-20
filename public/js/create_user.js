@@ -8,7 +8,7 @@
     {
         "name":user.displayName, 
         "email":user.email,
-        "eventsCreated": [1, 'defaultEvent']
+        "eventsCreated": [0, 'defaultEvent']
         });
     });
 })()
