@@ -75,51 +75,46 @@
                 </div>
                 
             </div>
-            
-            <div class="dbInfo">
-                <table id="table">
-      
-                    <tr>
-                        <th> Event Name </th>
-                        <th> Day </th>
-                        <th> Month </th>
-                        <th> Event Details </th>
-                        <th> Event Start Time </th>
-                        <th> Event End Time </th>
-                        <th> Event Location </th>
-                        <th> Year </th>
-                    </tr>
-      
-                </table>
-            </div>
 
-            <div class="eventpanel mobileDisplay" id="eventPanelId">
-                    <img class="closeButton" src="../static/images/x-button.png" alt="close event creation">
-                    <form id = "forms">                   
-                         <label for="fname">EVENT NAME</label>
-                         <input type="text" id="fname" name="eventname" value="Name"> 
-                    
-                         <label for="start">START TIME</label>
-                         <input type="time" id="start" name="starttime" value="00:00">
-                    
-                         <label for="end">END TIME</label>
-                         <input type="time" id="end" name="endtime" value="12:00">
-                    
-                         <label for="location">LOCATION</label>
-                         <input type="text" id="location" name="locationbox" value="Location">
-                    
-                         <label for="comment">COMMENTS</label>
-                         <textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
-                    
-                         <input type="submit" id="subbutton" value="SUBMIT">                                 
-                    </form>
+            <div class="addButton">
+                    <a href="#eventPanelId"><img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule"></a>
+            </div>
+            
+            <div id="dbInfo">
             </div>
 
         </div>
-        <footer class="addButton">
-            <a href="#eventPanelId"><img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule"></a>
-        </footer>
         
+        
+    </div>
+
+    <div class="eventpanel mobileDisplay" id="eventPanelId">
+		<div class="closeButton">
+			<img class="closeButton" 
+				id="closePanelButton" 
+				src="../static/images/keyboard-right-arrow-button.svg" 
+				alt="close event creation">
+		</div>
+
+            
+		<form id = "forms" autocomplete="off">                   
+				<label for="fname">Event Name</label>
+				<input type="text" id="fname" name="eventname" placeholder="Name"> 
+		
+				<label for="start">Start Time</label>
+				<input type="time" id="start" name="starttime" value="00:00">
+		
+				<label for="end">End Time</label>
+				<input type="time" id="end" name="endtime" value="12:00">
+		
+				<label for="location">Location</label>
+				<input type="text" id="location" name="locationbox" placeholder="Location">
+		
+				<label for="comment">Description</label>
+				<textarea id="comment" name="commentbox" placeholder="Write something.."></textarea>                                   
+		
+				<input type="submit" id="subbutton" value="SUBMIT">                                 
+		</form>
     </div>
 
 
@@ -135,14 +130,18 @@
             dateFormat: "d M y"
             });
         });
+        
         $('#AddEventButton').click(function () {
             $('.eventpanel').removeClass('mobileDisplay');
-            $('.addButton').css("display", "none");
-        })
+            // $('.addButton').css("display", "none");
+        });
+
         $('.closeButton').click(function() {
             $('.eventpanel').addClass('mobileDisplay');
-            $('.addButton').css("display", "flex");
-        })
+            // $('.addButton').css("display", "flex");
+        });
+        
     </script>
+
 </body>
 </html>
