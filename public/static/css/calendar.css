@@ -2,6 +2,7 @@ html {
     margin: auto;
     padding: auto;
     overflow-x: hidden;
+    background-color: whitesmoke;
     height: 100%;
     width: 100%;
 }
@@ -45,7 +46,7 @@ body {
     color: black;
     text-align: center;
     font-family: "Roboto";
-    background-color: white;
+    background-color: whitesmoke;
 }
 .schedule {
     margin:10pt;
@@ -65,7 +66,7 @@ body {
     height: 64px;
     width: 100%;
     z-index: 2;
-    position: fixed;
+    /* position: fixed; */
     margin: auto;
     padding-bottom: 1em;
     display: flex;
@@ -79,7 +80,7 @@ body {
     cursor: pointer;
 }
 
-footer img:hover{
+.addButton img:hover{
     content: url(../images/plus_full.svg)
 }
 
@@ -195,12 +196,13 @@ table {
 }
 
 .ui-datepicker-calendar .ui-state-default {
-      border-radius: 10px;
-      color:#303030;
-      text-shadow: 0px 1px 0px white;
-      border: 1px solid white;
-      height:50px;
-      width:50px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    color:#303030;
+    text-shadow: 0px 1px 0px white;
+    border: 1px solid whitesmoke;
+    height:50px;
+    width:50px;
 }
 
 .ui-datepicker-calendar .ui-state-hover {
@@ -225,6 +227,6 @@ table {
     margin: -1px;
 }
 .ui-datepicker-unselectable .ui-state-default {
-    background: white;
+    background: whitesmoke;
     color: #c7c7c7;
 }
