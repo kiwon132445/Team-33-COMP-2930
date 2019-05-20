@@ -2,6 +2,11 @@ body {
     background-color: whitesmoke;
 }
 
+#aboutUsList {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 ul {
     list-style: none;
 }
@@ -14,12 +19,6 @@ ul {
 
 .imgandname img, .imgandname h3 {
     padding: 10pt;
-}
-
-.imgandname img {
-    height: 100pt;
-    width: 100pt;
-    object-fit: contain;
 }
 
 .personInfo {
@@ -45,4 +44,12 @@ ul {
     #aboutUsList li {
         display: flex;
     }
+    .personInfo {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .imgandname {
+        padding-left: 2em;
+    }
 }
+
