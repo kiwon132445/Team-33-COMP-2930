@@ -37,7 +37,6 @@ authRef.onAuthStateChanged(function(user) {
                         var createTd = document.createElement('li');
                         var nameHeader = document.createElement('h3');
                         var node = document.createTextNode(list1.eventname);
-                        console.log(list1.eventname);
                         nameHeader.appendChild(node)
                         createTd.className += 'eventName'
                         createTd.appendChild(nameHeader);
