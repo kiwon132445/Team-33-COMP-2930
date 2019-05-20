@@ -1,52 +1,51 @@
 var firebase = app_firebase;  
 var dB = firebase.database();
-var userId = "0A8DicAbipMRCTWJ0opoctqoGtk2"
-//var userId = firebase.auth().currentUser.uid;
+var userId = firebase.auth().currentUser.uid;
 
 //Function to load edit form panel with previous event values.
 function loadformEvent() {
-  //Function to load event panel to allow adjustment
-  //Get Data from Datbase
-  //Get id string from div (editstr variable)
-  //Get Previous Event Data
-  var location = dB.ref('events/' + editstr);
-  location.on('value', snap => {
+  //Gets the Key of the Event
+  var eventdiv = this.getElementByClassName('eventID');
+  var eventid = eventdiv.innerText;
+  var eventpath = dB.ref('events/' + eventid);
+  //Open Panel with the Database Values as the Form's Values
+  //Put Function to open Edit Event Panel Here
+  //Sets the Previous Data of the Event into the Event Panel
+  eventpath.on('value', snap => {
     eventRef = JSON.stringify(snap.val(), null, 3);
-    var list1 = JSON.parse(eventRef);
-    //Open Panel with the Database Values as the Form's Values
+    var editlist = JSON.parse(eventRef);
     var editform = document.getElementById('id of form')
-    editform.elements[0].value = list1.eventname;
-    editform.elements[1].value = list1.eventStartTime;
-    editform.elements[2].value = list1.eventEndTime;
-    editform.elements[3].value = list1.eventLocation;
-    editform.elements[4].value = list1.eventDetails;
-    })
-};  
-
-//Function to submit edited data
-function submiteditEvent() {
-  var editlist = {};
-    editlist = $(this).serializeArray();
-    console.log(editlist);
+    editform.elements[0].value = editlist.eventname;
+    editform.elements[1].value = editlist.eventStartTime;
+    editform.elements[2].value = editlist.eventEndTime;
+    editform.elements[3].value = editlist.eventLocation;
+    editform.elements[4].value = editlist.eventDetails;
+    });
+  //Gets the Form Id to link its Submit Button to this Function
+  //Pressing Submit will update the Event's Details with the new values in the Form
+  $("#forms").submit(function(event) {
+    var newlist = {};
+    newlist = $(this).serializeArray();
     event.preventDefault();
 
-    //Get Key of Event, then set the values with the form's data
-    //var str = String Key of Event 
-     dB.ref('events/' + editstr).update({
+    dB.ref('events/' + eventid).update({
       year: pieces[0],
       month: pieces[1],
       day: pieces[2],
-      eventname: editlist[0].value,
-      eventStartTime: editlist[1].value,
-      eventEndTime: editlist[2].value,
-      eventLocation: editlist[3].value,
-      eventDetails: editlist[4].value
-      
+      eventname: newlist[0].value,
+      eventStartTime: newlist[1].value,
+      eventEndTime: newlist[2].value,
+      eventLocation: newlist[3].value,
+      eventDetails: newlist[4].value
     }); 
-}
+  })
+};  
+
+
 
 function deleteEvent() {
-    //Get id string from div (delstr variable)
+    var iddiv2 = this.getElementByClassName('eventID');
+    var delstr = iddiv2.innerText;
     var deletelocation = dB.ref('events');
     deletelocation.remove(delstr);
 
