@@ -1,7 +1,7 @@
 body{
   font-family:'Roboto';
-  background-color: #040730;
   margin: 0;
+  background-color: whitesmoke;
 }
 
 .header2{
@@ -42,11 +42,7 @@ span{
   display:block;
 }
 
-.logo{
-  background-color: #040730;
-  
 
-}
 /*Logo animation*/
 @keyframes spin {
   100% {
@@ -66,7 +62,7 @@ input[type=email], select {
   border-radius: 4px;
   box-sizing: border-box;
   margin: auto;
-  background-color: #333439;
+  background-color: #54565c;
   color: white;
   margin-bottom: 15px;
 }
@@ -86,7 +82,7 @@ input[type=password], select {
   margin: auto;
   margin-top: 5px;
   margin-bottom: 40px;
-  background-color: #333439;
+  background-color: #54565c;
   color: white;
 }
 button {
@@ -100,7 +96,9 @@ button {
   width: 300px;
   font-size: 16px;
   text-align: center;
-
+  background-color: #54565c;
+  color: white;
+  border: none;
 }
 button:hover {
   background-color: #42AFE6;
@@ -133,6 +131,10 @@ input[type=email], select {
 
 .header1{
   margin-right: 40px;
+}
+
+button {
+  width: 60%;
 }
 
 }
