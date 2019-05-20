@@ -39,7 +39,7 @@ authRef.onAuthStateChanged(function(user) {
       dB.ref('users/' + user.uid + '/eventsCreated').once('value', function(snapshot) {
         var childnum = snapshot.numChildren(); 
         dB.ref('users/' + user.uid + '/eventsCreated').update({
-          [childnum + 1] : str
+          [childnum] : str
         })
       }); 
        
