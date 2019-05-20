@@ -11,4 +11,4 @@
         "eventsCreated": [0, 'defaultEvent']
         });
     });
-})()
+})

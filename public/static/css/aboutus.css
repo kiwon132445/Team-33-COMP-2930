@@ -21,12 +21,6 @@ ul {
     padding: 10pt;
 }
 
-.imgandname img {
-    height: 100pt;
-    width: 100pt;
-    object-fit: contain;
-}
-
 .personInfo {
     text-align: center;
 }
@@ -50,4 +44,12 @@ ul {
     #aboutUsList li {
         display: flex;
     }
+    .personInfo {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .imgandname {
+        padding-left: 2em;
+    }
 }
+
