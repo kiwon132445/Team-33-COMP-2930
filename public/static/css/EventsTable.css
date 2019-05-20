@@ -48,6 +48,31 @@
 }
 .eventLocation:before {
 	content: 'Location: ';
+	margin-bottom: 0;
+}
+
+.eventID {
+	text-indent: 9999pt;
+	font-size: 0.5pt;
+}
+
+.modifyButtons {
+	padding-bottom: 0.25em;
+}
+
+.editButton {
+	margin-right: 0.5em;
+}
+
+.deleteButton {
+	margin-left: 0.5em;
+	margin-right: 1em;
+}
+
+.editButton,
+.deleteButton {
+	cursor: pointer;
+	float: right;
 }
 
 /*Mobile Media Query*/

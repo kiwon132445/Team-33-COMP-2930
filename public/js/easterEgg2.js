@@ -6,7 +6,7 @@ $(document).ready(function(){
         console.log(count)
                 
         if (count===3) {
-            $('#story').css("background-image", "url('../static/images/endgame.jpg')")
+            $('#story').css("background-image", "url('../static/images/endgame.jpg')", "no-repeat", "center", "center", "fixed")
             $('#story').css("background-size", "cover")
         }
         if (count ==6) {
