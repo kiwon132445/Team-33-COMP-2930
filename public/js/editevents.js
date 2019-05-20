@@ -14,7 +14,7 @@ function loadformEvent() {
   eventpath.on('value', snap => {
     eventRef = JSON.stringify(snap.val(), null, 3);
     var editlist = JSON.parse(eventRef);
-    var editform = document.getElementById('id of form')
+    var editform = document.getElementById('instantform')
     editform.elements[0].value = editlist.eventname;
     editform.elements[1].value = editlist.eventStartTime;
     editform.elements[2].value = editlist.eventEndTime;
@@ -23,7 +23,7 @@ function loadformEvent() {
     });
   //Gets the Form Id to link its Submit Button to this Function
   //Pressing Submit will update the Event's Details with the new values in the Form
-  $("#forms").submit(function(event) {
+  $("#instantform").submit(function(event) {
     var newlist = {};
     newlist = $(this).serializeArray();
     event.preventDefault();
