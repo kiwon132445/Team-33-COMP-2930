@@ -3,7 +3,7 @@
 // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCeo22zfHMUqar6CtiHV9aUDf2ZCsk1DR8",
-    authDomain: "rolodox-7aeaf.firebaseapp.com",
+    authDomain: "https://clientry.web.app/",
     databaseURL: "https://rolodox-7aeaf.firebaseio.com",
     projectId: "rolodox-7aeaf",
     storageBucket: "rolodox-7aeaf.appspot.com",

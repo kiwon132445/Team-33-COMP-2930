@@ -7,6 +7,7 @@ authRef.onAuthStateChanged(function(user) {
         document.getElementById("username").innerHTML = user.displayName;
         var uid = user.uid;
         var user = firebase.auth().currentUser;
+        console.log(user)
         // output.innerHTML(user.displayName);
     } else {
         console.log('Not logged in');

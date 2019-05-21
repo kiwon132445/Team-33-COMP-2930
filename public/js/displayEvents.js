@@ -35,8 +35,8 @@ authRef.onAuthStateChanged(function(user) {
                 var error = document.createElement('h1');
                 var textError = document.createTextNode("Nothing To Show!");
                 error.appendChild(textError);
-                var mainDiv = document.getElementById('dbInfo');
-                mainDiv.appendChild(error);
+                var mainDiv = document.getElementById('dbInfo').style.display = "none";
+                document.body.appendChild(error)
             }
 
         else {
@@ -105,12 +105,24 @@ authRef.onAuthStateChanged(function(user) {
                             var editButton = new Image(20, 20);
                             editButton.src = '../static/images/edit_hollow.svg';
                             editButton.className += 'editButton'
+                            editButton.addEventListener("click",() => {
+                                editEvent(node5.nodeValue)
+                            })
+                            editButton.setAttribute("onclick", "editToggle()");
+
                             var deleteButton = new Image(20, 20);
                             deleteButton.src = '../static/images/delete_hollow.svg';
                             deleteButton.className += 'deleteButton'
+                            deleteButton.addEventListener("click",() => {
+                                let choice = confirm("Do you wish to delete this event?")
+                                if (choice === true) {
+                                    deleteEvent(node5.nodeValue);
+                                }
+                            })
                             createTd7.appendChild(deleteButton);
                             createTd7.appendChild(editButton);
                             createTd7.className += 'modifyButtons';
+
 
                             createTr.appendChild(createTd);
                             createTr.appendChild(createTd2);
