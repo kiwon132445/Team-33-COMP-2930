@@ -1,0 +1,73 @@
+
+/**
+  *The users collection would have keys 
+  *-> uid and their corresponding user object. -> (email, name)
+*/
+
+
+{
+  "users" : {
+    "0A8DicAbipMRCTWJ0opoctqoGtk2" : {
+      "email" : "elmo@elmo.com",
+      "name" : "elmo elmo",
+      "clientCreatedEvents" : {},
+      "eventsCreated" : {
+        "1" : "riuehkjsnrandomstringsjk",
+        "2" : ""
+      },
+    },
+    "G0zAHrliGkMZqOOAIwgUBjjn0hh2" :{
+      "email" : "amarsingara@gmail.com",
+      "name" : "amar singara",
+      "clientCreatedEvents" : {
+        "1" : "riuehkjsnrandomstringsjk",
+        "2" : "riuehkjsnrandomstringsjk",
+        "3" : "riuehkjsnrandomstringsjk"
+      },
+      "eventsCreated" : {
+
+      }
+    }
+  },
+  "events" : {
+    "riuehkjsnrandomstringsjk" : {
+      "year": "2019",
+      "month" : "3",
+      "day": "12",
+      "eventName" : "Fitness Class",
+      "eventStartTime" : "12:30",
+      "eventEndTime" : "14:30",
+      "eventDetails": {
+        "professional" : "G0zAHrliGkMZqOOAIwgUBjjn0hh2",
+        "request": "accepted",
+      }
+    },
+      "fuhslbfsadbficrdfbsdafdsb" : {
+      "year": "2019",
+      "month" : "3",
+      "day": "12",
+      "eventName" : "Math Class",
+      "eventStartTime" : "14:30",
+      "eventEndTime" : "16:30",
+      "eventDetails": {
+        "professional" : "G0zAHrliGkMZqOOAIwgUBjjn0hh2",
+        "request": "accepted",
+      }
+    },
+      "gsddfiuehkfsdfasfsdgsfsjk" : {
+      "year": "2019",
+      "month" : "3",
+      "day": "14",
+      "eventName" : "Fitness Class",
+      "eventStartTime" : "12:30",
+      "eventEndTime" : "14:30",
+      "eventDetails": {
+        "professional" : "G0zAHrliGkMZqOOAIwgUBjjn0hh2",
+        "request": "pending",
+      }
+    },
+  }
+
+
+
+}

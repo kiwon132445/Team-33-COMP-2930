@@ -14,4 +14,17 @@ $(document).ready(function () {
             $(menu).animate(menuAnimSlideOut, 100);
         }
     });
+
 })
+
+function toHome(){
+    window.location.href = "navigation.html";
+}
+
+function toCalendar(){
+    window.location.href = "calendar.html";
+}
+
+function toAbout(){
+    window.location.href = "aboutus.html";
+}
