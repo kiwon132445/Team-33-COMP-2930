@@ -49,8 +49,6 @@ function deleteEvent(x) {
     .once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
         deleteuserevent.child(childSnapshot.key).remove();
-    }).then(
-      location.reload()
-    );
+    })
 });
 }
