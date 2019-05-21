@@ -18,39 +18,40 @@ function editEvent(x) {
     editform.elements[4].value = editlist.eventDetails;
     });
   //Submit Function to update data
-  $("#instantForm").submit(function(event) {
+  $("#instantform").submit(function(event) {
     var newlist = {};
     newlist = $(this).serializeArray();
     event.preventDefault();
 
-    eventpath.update({
+    dB.ref('events/' + x).update({
       eventname: newlist[0].value,
       eventStartTime: newlist[1].value,
       eventEndTime: newlist[2].value,
       eventLocation: newlist[3].value,
       eventDetails: newlist[4].value
-    });
-    setTimeout(() => {
-      location.reload();
-    }, 200);
+    }); 
   })
 };  
 
 
 //Function to delete data for event 'x'
 function deleteEvent(x) {
-    console.log(x)
     //Delete the event from 'events'
     var deleteevent = dB.ref('events/' + x);
-    deleteevent.remove();
+    deleteevent.remove(x);
     //Delete the event from 'users'
     var deleteuserevent = db.ref('users/' + user.uid + '/eventsCreated');
-    deleteuserevent.orderByChild().equalTo(x)
-    .once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-        deleteuserevent.child(childSnapshot.key).remove();
-    }).then(
-      location.reload()
-    );
-});
+    
+    deleteuserevent.on('value', snap => {
+        var valref = JSON.stringify(snap.val(), null, 3) 
+        var keyref = JSON.stringify(snap.key(), null, 3) 
+        var vallist = JSON.parse(valref);
+        var keylist = JSON.parse(keyref);
+        for (var i = 0; i < vallist.length; i++) {
+          if (valllist[i] == x) {
+            deleteuserevent.child(keylist[i]).remove();
+          }
+        }
+  })
+  
 }
