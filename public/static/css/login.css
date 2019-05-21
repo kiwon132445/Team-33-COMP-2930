@@ -118,6 +118,30 @@ footer{
    
 }
 
+.social-button{
+  width: 75px;
+  background: whitesmoke;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  outline: 0;
+  border: 0;
+  margin-top: -10px;
+}
+
+.social-button:active {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+}
+
+.social-button img{
+  width: 100%;
+}
+
+.google{
+
+  display:flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1200px){
  
 input[type=password], select {
