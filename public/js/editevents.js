@@ -43,12 +43,8 @@ function deleteEvent(x) {
     //Delete the event from 'events'
     var deleteevent = dB.ref('events/' + x);
     deleteevent.remove();
-    //Delete the event from 'users'
-    var deleteuserevent = db.ref('users/' + user.uid + '/eventsCreated');
-    deleteuserevent.orderByChild().equalTo(x)
-    .once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-        deleteuserevent.child(childSnapshot.key).remove();
-    })
-});
-}
+  
+    setTimeout(() => {
+      location.reload();
+    }, 200);
+};
