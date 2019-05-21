@@ -15,6 +15,10 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    text-align: center;
+}
+
 #mainCalendar {
     display: flex;
     align-items: center;
