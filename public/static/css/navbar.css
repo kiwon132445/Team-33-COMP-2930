@@ -49,6 +49,10 @@ ul {
     justify-content: center;
 }
 
+.navLogo:hover{
+    background: transparent !important;
+}
+
 .leftnav li h3:hover, 
 .logoutbutton:hover {
     background-color: #040730;
