@@ -14,6 +14,7 @@ $(document).ready(function () {
             $(menu).animate(menuAnimSlideOut, 100);
         }
     });
+
 })
 
 function toHome(){

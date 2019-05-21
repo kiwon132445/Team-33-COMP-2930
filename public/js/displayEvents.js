@@ -22,6 +22,7 @@ console.log(currentMonth)
 console.log(currentYear)
 var oneDay = 24*60*60*1000;
 
+
 var authRef = firebase.auth();
 authRef.onAuthStateChanged(function(user) {
     var firebaseRef = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/eventsCreated")
@@ -148,4 +149,5 @@ authRef.onAuthStateChanged(function(user) {
         
     });
 });
+
 
