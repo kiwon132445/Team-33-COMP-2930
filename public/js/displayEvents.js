@@ -142,12 +142,8 @@ authRef.onAuthStateChanged(function(user) {
                             }
                         }
                     });
-                }  
-                   
-            }
-
-            
-            
+                }   
+            }              
         }
         
     });
