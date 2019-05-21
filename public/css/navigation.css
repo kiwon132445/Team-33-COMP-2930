@@ -1,0 +1,90 @@
+
+.container{
+    margin-top: 40px;
+}
+.logoutbutton {
+    background-color: #42AFE6 ;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    margin:auto;
+    float:left;
+    color: #484747;
+    border-radius: 25px;
+}
+.logoutbutton:hover {
+    background-color: #040730;
+    color: white;
+    font-weight: bold;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: #3f3f3f;
+    
+}
+#greeting {
+
+    padding-top: 15px;
+    padding-left: 10px;
+    margin: auto;
+    text-align: right;
+}
+
+footer{
+
+ 
+  color: white;
+  position: absolute;
+  bottom:0;
+  width:100%;
+
+}
+
+.footbutton {
+    text-align: center;
+    background-color:  #42AFE6 ; 
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    color: #484747;
+    padding: 14px 20px;
+    border-radius: 25px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footbutton:hover {
+    background-color:#040730;
+    color: white;
+    font-weight: bold;
+}
+
+.home{
+
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media screen and (max-width: 1200px){
+
+.logoutbutton {
+
+    width: 30%;
+}
+
+
+
+}
+
