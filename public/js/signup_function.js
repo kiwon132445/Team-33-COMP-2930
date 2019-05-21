@@ -44,7 +44,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     if (user != null) {
       var email_id = user.email;
-      window.location.href = "navigation.html";
+      window.location.href = "/html/navigation.html";
     }
   } else {
     // No user is signed in.
