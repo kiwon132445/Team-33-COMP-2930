@@ -30,11 +30,6 @@ authRef.onAuthStateChanged(function(user) {
       var str = makeid(10)
       console.log(str)
     
-      //Counts how many events are there to give the new event the correct number
-      dB.ref('users/' + user.uid + '/eventsCreated').once("value").then(function(snapshot) {
-        var childnum = snapshot.numChildren(); 
-
-      });
       //Creates new event data key (with random string) under the user's "eventsCreated" node
       dB.ref('users/' + user.uid + '/eventsCreated').once('value', function(snapshot) {
         var childnum = snapshot.numChildren(); 

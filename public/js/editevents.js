@@ -18,12 +18,20 @@ function editEvent(x) {
     editform.elements[4].value = editlist.eventDetails;
     });
   //Submit Function to update data
+<<<<<<< HEAD
+  $("#instantform").submit(function(event) {
+=======
   $("#instantForm").submit(function(event) {
+>>>>>>> 54487a33ff19048828330cf30580896391c6ac60
     var newlist = {};
     newlist = $(this).serializeArray();
     event.preventDefault();
 
+<<<<<<< HEAD
+    dB.ref('events/' + x).update({
+=======
     eventpath.update({
+>>>>>>> 54487a33ff19048828330cf30580896391c6ac60
       eventname: newlist[0].value,
       eventStartTime: newlist[1].value,
       eventEndTime: newlist[2].value,
@@ -39,18 +47,28 @@ function editEvent(x) {
 
 //Function to delete data for event 'x'
 function deleteEvent(x) {
+<<<<<<< HEAD
+    //Delete the event from 'events'
+    var deleteevent = dB.ref('events');
+    deleteevent.remove(x);
+=======
     console.log(x)
     //Delete the event from 'events'
     var deleteevent = dB.ref('events/' + x);
     deleteevent.remove();
+>>>>>>> 54487a33ff19048828330cf30580896391c6ac60
     //Delete the event from 'users'
     var deleteuserevent = db.ref('users/' + user.uid + '/eventsCreated');
     deleteuserevent.orderByChild().equalTo(x)
     .once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
         deleteuserevent.child(childSnapshot.key).remove();
+<<<<<<< HEAD
+    });
+=======
     }).then(
       location.reload()
     );
+>>>>>>> 54487a33ff19048828330cf30580896391c6ac60
 });
 }
