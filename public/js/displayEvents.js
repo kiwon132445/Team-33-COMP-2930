@@ -66,7 +66,7 @@ authRef.onAuthStateChanged(function(user) {
          */
         if (list === null){
             var error = document.createElement('h1');
-            var textError = document.createTextNode("Nothing To Show!");
+            var textError = document.createTextNode("No Events To Show!");
             error.appendChild(textError);
             var mainDiv = document.getElementById('dbInfo').style.display = "none";
             document.body.appendChild(error)
@@ -242,7 +242,7 @@ authRef.onAuthStateChanged(function(user) {
                              */
                             if (count == 0){
                                 var error = document.createElement('h1');
-                                var textError = document.createTextNode("Nothing To Show!");
+                                var textError = document.createTextNode("No Events To Show!");
                                 error.appendChild(textError);
                                 var mainDiv = document.getElementById('dbInfo');
                                 mainDiv.appendChild(error);
