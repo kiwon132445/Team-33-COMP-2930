@@ -1,0 +1,56 @@
+body {
+    background-color: whitesmoke;
+}
+
+#aboutUsList {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+.imgandname {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imgandname img, .imgandname h3 {
+    padding: 10pt;
+}
+
+#story {
+    text-align: center;
+}
+#story p {
+    font-size: 16pt;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#story img {
+    height: 75pt;
+}
+
+.aboutusInfo h1{
+    padding-left: 1em;
+}
+
+@media screen and (min-width: 880px) {
+    #aboutUsList li {
+        display: flex;
+    }
+    .personInfo {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .imgandname {
+        padding-left: 2em;
+    }
+    #aboutUsList {
+        text-align: center;
+    }
+
+}
+
