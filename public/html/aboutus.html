@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- CSS Stylesheet imports -->
     <link rel="stylesheet" type="text/css" href="../static/css/aboutus.css">
     <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
 
+    <!-- Javascript, jquery and firebase imports -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -28,40 +30,43 @@
 
 <body>
     <div class="container">
+        <!-- Navbar continues from line 34 to line 64; this is the header -->
         <div class="navbar">
+                <!-- Desktop navbar from line 36 to line 47 -->
+                <div class="desktopNav">
+                    <ul class="leftnav">
+                        <li onclick="toHome()" class="navLogo"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                    </ul>
+                    <ul class="rightnav">
+                        <li><h3 id="username"></h3></li>
+                        <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
+                    </ul>
+                </div>
+                    
+                <!-- Mobile navbar from line 50 to 63 -->
+                <div class="mobileNav">
+                    <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
+                    <img src="../static/images/menu.png" alt="menu" class="menuButton">
+                </div>
             
-            <div class="desktopNav">
-                <ul class="leftnav">
-                    <li onclick="toHome()"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                </ul>
-                <ul class="rightnav">
-                    <li><h3 id="username"></h3></li>
-                    <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
-                </ul>
+                <div class="menuMobile">
+                    <ul class="menu">
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                        <li><h3>Account</h3></li>
+                        <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="mobileNav">
-                <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
-                <img src="../static/images/menu.png" alt="menu" class="menuButton">
-            </div>
-
-            <div class="menuMobile">
-                <ul class="menu">
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                    <li><h3>Account</h3></li>
-                    <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
-                </ul>
-            </div>
-        </div>
         <hr>
         
+        <!-- Body of the page, shows the About Us info -->
         <div class="aboutusInfo">
-            
+            <!-- Story of our app -->
             <div id="story">
                 <h2>The story of our app...</h2>
                 <p>
@@ -84,7 +89,8 @@
             <h1>Team 33</h1>
             <hr>
             <ul id="aboutUsList">
-                <li>
+                <!-- About Philip -->
+                <li> 
                     <div class="imgandname">
                         <img src="../static/images/manny-pacquiao.png" alt="philip" height="100" width="100">
                         <h3>Philip Bolinao</h3>
@@ -99,6 +105,7 @@
                     </div>
                 </li>
                 <hr>
+                <!-- About Kibum -->
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/kibum_park.jpg" alt="kibum" height="100" width="100">
@@ -111,6 +118,7 @@
                     </div>
                 </li>
                 <hr>
+                <!-- About Harman -->
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/plus_full.svg" alt="harman" height="100" width="100">
@@ -121,7 +129,8 @@
                         <p>Stuff about harman</p>
                     </div>   
                 </li>
-                <hr>  
+                <hr> 
+                <!-- About Amar --> 
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/plus_full.svg" alt="amar" height="100" width="100">
@@ -132,7 +141,8 @@
                         <p>Stuff about amar</p>
                     </div>  
                 </li> 
-                <hr>  
+                <hr>
+                <!-- About Kiwon --> 
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/kiwon.jpg" alt="kiwon" height="100" width="100">
@@ -153,7 +163,6 @@
                 <hr>
             </ul>
         </div>
-
     </div>
 </body>
 

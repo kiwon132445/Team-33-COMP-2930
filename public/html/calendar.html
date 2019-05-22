@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- CSS stylesheet imports -->
     <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/calendar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/EventsTable.css">
     <link rel="stylesheet" type="text/css" href="../static/css/eventpanel.css">
     <link rel="stylesheet" type="text/css" href="../static/css/editpanel.css">
 
+    <!-- Javascript, jquery and firebase imports -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -23,6 +25,7 @@
     <script src="../js/kickout.js"></script>
     <script src="../js/editevents.js"></script>
     <script src="../js/displayEvents.js"></script>
+    <script src="../js/createevent.js"></script>
 
     <title>Calendar</title>
 
@@ -33,39 +36,43 @@
 
 <body>
     <div id="container">
+        <!-- Navbar continues from line 39 to line 69; this is the header -->
         <div class="navbar">
+                <!-- Desktop navbar from line 41 to line 52 -->
+                <div class="desktopNav">
+                    <ul class="leftnav">
+                        <li onclick="toHome()" class="navLogo"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                    </ul>
+                    <ul class="rightnav">
+                        <li><h3 id="username"></h3></li>
+                        <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
+                    </ul>
+                </div>
+                    
+                <!-- Mobile navbar from line 55 to 68 -->
+                <div class="mobileNav">
+                    <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
+                    <img src="../static/images/menu.png" alt="menu" class="menuButton">
+                </div>
             
-            <div class="desktopNav">
-                <ul class="leftnav">
-                    <li onclick="toHome()"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                </ul>
-                <ul class="rightnav">
-                    <li><h3 id="username"></h3></li>
-                    <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
-                </ul>
+                <div class="menuMobile">
+                    <ul class="menu">
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                        <li><h3>Account</h3></li>
+                        <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="mobileNav">
-                <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
-                <img src="../static/images/menu.png" alt="menu" class="menuButton">
-            </div>
-
-            <div class="menuMobile">
-                <ul class="menu">
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                    <li><h3>Account</h3></li>
-                    <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
-                </ul>
-            </div>
-        </div>
         <hr>
         
+        <!-- Main div for stuff in the body -->
         <div id="mainStuff">
+            <!-- The calendar goes in this div -->
             <div id="mainCalendar">
                 <div class="calendarHeader">
                     <h3>Calendar</h3>
@@ -73,14 +80,15 @@
                 <div id="calendar">
                     <div id="datepicker"></div>
                     <input id="dateInput" value="Selected Date" type="text" disabled>
-                </div>
-                
+                </div>  
             </div>
 
+            <!-- + button that opens the Create Event panel -->
             <div class="addButton">
                     <a href="#eventPanelId"><img id="AddEventButton" src="../static/images/plus_hollow.svg" alt="add to schedule"></a>
             </div>
 
+            <!-- The alert panel that pops up if you attempt to delete an event (initially hidden) -->
             <div class="warningPanelCenter hide">
                 <div class="warningPanel">
                     <h3>Are You Sure You Wish To Delete This Event?</h3>
@@ -90,6 +98,7 @@
                     </div>
                 </div>
             </div>
+            <!-- The event panel that shows up when you want to edit an event (initially hidden) -->
             <div class="editEvent">
                 <div class="editPanel">
                     <div onclick="editToggle()" class="closeButtonContainer">
@@ -119,6 +128,7 @@
                 </div>
             </div>
 
+            <!-- The past, upcoming, and todays events are displayed here -->
             <div id="dbInfo">
                 <h1>Todays Events</h1>
                 <div id="todaysEvents"></div> <hr>
@@ -133,6 +143,7 @@
         
     </div>
 
+    <!-- The event panel that shows up when you want to create an event (initially hidden) -->
     <div class="eventpanel mobileDisplay" id="eventPanelId">
 		<div class="closeButton">
 			<img class="closeButton" 
@@ -140,8 +151,6 @@
 				src="../static/images/keyboard-right-arrow-button.svg" 
 				alt="close event creation">
 		</div>
-
-            
 		<form id = "forms" autocomplete="off">                   
 				<label for="fname">Event Name</label>
 				<input type="text" id="fname" name="eventname" placeholder="Name"> 
@@ -164,10 +173,11 @@
 
 
     <script>
+        //JQuery Date Picker that is used for the calendar
         $( function() {
         $( "#datepicker" ).datepicker({
             onSelect: function(dateText, inst) {
-                var date = $("#dateInput").val(dateText);
+                var date = $("#dateInput").val(dateText); 
             },
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             firstDay: 0,
@@ -176,23 +186,23 @@
             });
         });
         
+        //Makes the Create New Event panel display when the + button is pressed
         $('#AddEventButton').click(function () {
             $('.eventpanel').removeClass('mobileDisplay');
-            // $('.addButton').css("display", "none");
         });
 
+        //Makes the Create New Event panel hide when it is closed
         $('.closeButton').click(function() {
             $('.eventpanel').addClass('mobileDisplay');
-            // $('.addButton').css("display", "flex");
         });
         
     </script>
     <script>
+        //Toggles the edit event panel
         function editToggle() {
         $(".editEvent").slideToggle();
     }
     </script>
-    <script src="../js/createevent.js"></script>
 
 </body>
 </html>
