@@ -21,6 +21,10 @@ ul {
     padding: 10pt;
 }
 
+.personInfo {
+    text-align: center;
+}
+
 #story {
     text-align: center;
 }
@@ -28,6 +32,7 @@ ul {
     font-size: 16pt;
     margin-left: 10%;
     margin-right: 10%;
+    padding-top: 0;
 }
 #story img {
     height: 75pt;
