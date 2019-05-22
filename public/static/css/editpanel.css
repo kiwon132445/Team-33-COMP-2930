@@ -1,0 +1,145 @@
+.warningPanelCenter, .editEvent {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.warningPanel {
+    background-color: gray;
+    padding:10pt;
+    margin:5pt;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    display: fixed;
+}
+.warningPanel div {
+    width:30%;
+    display:flex;
+    justify-content: space-between;
+}
+.editPanel {
+    background-color: gray;
+    padding:0;
+    padding-bottom: 2em;
+    margin:auto;
+    border: 1px solid black;
+    top: 80pt;
+    height: 100%;
+    width: 80%;
+    z-index: 999;
+    display: fixed;
+}
+.editPanel form { 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#closePanelButton {
+    display:flex;
+    justify-content: center;
+    margin:auto;
+    height: 20pt;
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+.closeButtonContainer {
+    width: 100%;
+    border-radius: 0px 0px 8px 8px;
+}
+.closeButtonContainer:hover {
+    background-color: #dadada;
+}
+.editEvent {
+    display:none;
+}
+.hide {
+    display:none;
+}
+
+  
+  input::placeholder {
+    color:#b1b1b1;
+  }
+  
+  input:focus {
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.17);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.17);
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.17);
+    outline:none;
+    border-radius: 25px;
+    transition: .3s;
+  
+  }
+
+input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #585858;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: auto;
+    transition: .3s none;
+    background-color: #fff;
+    color: #575757;
+    box-shadow: none;
+    font-size:18px;
+    margin-bottom: 15px;
+}
+
+
+label {
+    display: block;
+}
+
+textarea {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #585858;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: auto;
+    transition: .3s none;
+    background-color: #fff;
+    color: #575757;
+    box-shadow: none;
+    font-size:18px;
+    margin-bottom: 15px;
+}
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    color: rgb(170, 170, 170);
+}
+
+#subbutton {
+    border-radius: 4px;
+    background: #42AFE6;
+    color: white;
+    border: none;
+    height: 40px;
+    margin:0;
+    cursor: pointer;
+}
+
+#subbutton:hover {
+    background-color: rgb(3, 118, 251);
+}
+
+
+
+/*Mobile Media Query*/
+@media screen and (max-width: 880px) {
+    .editPanel {
+        width: 96%;
+    }
+    #closePanelButton {
+        padding-top: 1em;
+    }
+}

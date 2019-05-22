@@ -62,5 +62,11 @@ authRef.onAuthStateChanged(function(user) {
       })  
       $('.eventpanel').addClass('mobileDisplay');
       document.getElementById("forms").reset();
-  })
-});
+      setTimeout(() => {
+        location.reload();
+      }, 200);
+  });
+
+
+
+ 

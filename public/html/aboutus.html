@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- CSS Stylesheet imports -->
     <link rel="stylesheet" type="text/css" href="../static/css/aboutus.css">
     <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
 
+    <!-- Javascript, jquery and firebase imports -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -28,40 +30,43 @@
 
 <body>
     <div class="container">
+        <!-- Navbar continues from line 34 to line 64; this is the header -->
         <div class="navbar">
+                <!-- Desktop navbar from line 36 to line 47 -->
+                <div class="desktopNav">
+                    <ul class="leftnav">
+                        <li onclick="toHome()" class="navLogo"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                    </ul>
+                    <ul class="rightnav">
+                        <li><h3 id="username"></h3></li>
+                        <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
+                    </ul>
+                </div>
+                    
+                <!-- Mobile navbar from line 50 to 63 -->
+                <div class="mobileNav">
+                    <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
+                    <img src="../static/images/menu.png" alt="menu" class="menuButton">
+                </div>
             
-            <div class="desktopNav">
-                <ul class="leftnav">
-                    <li onclick="toHome()"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                </ul>
-                <ul class="rightnav">
-                    <li><h3 id="username"></h3></li>
-                    <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
-                </ul>
+                <div class="menuMobile">
+                    <ul class="menu">
+                        <li onclick="toHome()"><h3 class="home"> Home </h3></li>
+                        <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
+                        <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
+                        <li><h3>Account</h3></li>
+                        <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="mobileNav">
-                <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
-                <img src="../static/images/menu.png" alt="menu" class="menuButton">
-            </div>
-
-            <div class="menuMobile">
-                <ul class="menu">
-                    <li onclick="toHome()"><h3 class="home"> Home </h3></li>
-                    <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
-                    <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
-                    <li><h3>Account</h3></li>
-                    <li><h3 class="logoutbutton" onclick="logout()"> Log out </h3></li>
-                </ul>
-            </div>
-        </div>
         <hr>
         
+        <!-- Body of the page, shows the About Us info -->
         <div class="aboutusInfo">
-            
+            <!-- Story of our app -->
             <div id="story">
                 <h2>The story of our app...</h2>
                 <p>
@@ -71,7 +76,7 @@
                     all of their needs sorted into one easy to use app! <br/> <br/>
                     However, not all things go the way they were planned. Due to multiple team conflicts and a 
                     lack of knowledge this project has gone along a bumpy road. We have had multiple renames,
-                    multiple redesigns, and we even had to restart from scratch. <br/>
+                    multiple redesigns, and we even had to restart from scratch. <br/> <br/>
                     Despite all of this, we have worked hard to release what we could in the limited time that we had.
                     After a lot of hard work, Team 33 presents 
                     <br/>
@@ -84,23 +89,25 @@
             <h1>Team 33</h1>
             <hr>
             <ul id="aboutUsList">
-                <li>
+                <!-- About Philip -->
+                <li> 
                     <div class="imgandname">
-                        <img src="../static/images/plus_full.svg" alt="philip" height="100" width="100">
+                        <img src="../static/images/philip.jpg" alt="philip" height="100" width="100">
                         <h3>Philip Bolinao</h3>
                     </div>
                     <div class="personInfo">
                         <p>
-                            A beginner to programming and single UwU
+                            A beginner to programming with big dreams and little potential.
                         </p>
                         <p><i>"I don't feel so good..."</i></p>
                         <p>-Spiderman</p>
                     </div>
                 </li>
                 <hr>
+                <!-- About Kibum -->
                 <li>
                     <div class="imgandname">
-                        <img src="../static/images/kibum_park.jpg" alt="kibum" height="133" width="100">
+                        <img src="../static/images/kibum_park.jpg" alt="kibum" height="100" width="100">
                         <h3>Kibum Park</h3>
                     </div>
                     <div class="personInfo">
@@ -109,6 +116,7 @@
                     </div>
                 </li>
                 <hr>
+                <!-- About Harman -->
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/plus_full.svg" alt="harman" height="100" width="100">
@@ -118,17 +126,20 @@
                         <p>Stuff about harman</p>
                     </div>   
                 </li>
-                <hr>  
+                <hr> 
+                <!-- About Amar --> 
                 <li>
                     <div class="imgandname">
-                        <img src="../static/images/plus_full.svg" alt="amar" height="100" width="100">
+                        <img src="../static/images/amar.jpg" alt="amar" height="100" width="100">
                         <h3>Amar Singara</h3>
                     </div>
                     <div class="personInfo">
-                        <p>Stuff about amar</p>
+                        <p>"Checks over Stripes"</p>
+                        <p>"Sicko Mode"</p>
                     </div>  
                 </li> 
-                <hr>  
+                <hr>
+                <!-- About Kiwon --> 
                 <li>
                     <div class="imgandname">
                         <img src="../static/images/kiwon.jpg" alt="kiwon" height="100" width="100">
@@ -136,17 +147,18 @@
                     </div>
                     <div class="personInfo">
                         <p>
-                            A beginning CST student looking forward to the experiences 
-                            that he will be able to go through in the future.
+                            A beginning CST student looking forward to the experiences</br>
+                            that he will be able to go through in the future.</br>
+                            </br>
+                            <i>"Don't feel stressed before you fail!"</i> </br>
+                            </br>
+                            Quote by, lazy Kiwon
                         </p>
-                        <p><i>"Don't feel stressed before you fail!"</i></p>
-                        <p>Quote by, lazy Kiwon</p>
                     </div> 
                 </li>    
                 <hr>
             </ul>
         </div>
-
     </div>
 </body>
 

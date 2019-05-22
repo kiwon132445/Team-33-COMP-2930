@@ -3,14 +3,19 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <!-- Font imports -->
     <link href="https://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+    <!-- CSS stylesheet imports -->
     <link rel="stylesheet" type="text/css" href="../static/css/navigation.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../static/css/EventsTable.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/editpanel.css">
 
+    <!-- Javascript, jquery and firebase imports -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -26,12 +31,13 @@
 </head>
 
 <body>
-    
     <div class="container">
+        <!-- Navbar continues from line 36 to line 66; this is the header -->
         <div class="navbar">
+            <!-- Desktop navbar from line 38 to line 49 -->
             <div class="desktopNav">
                 <ul class="leftnav">
-                    <li onclick="toHome()"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
+                    <li onclick="toHome()" class="navLogo"><img src="../static/images/clientryLogoDark.png" alt="clientry"></li>
                     <li onclick="toHome()"><h3 class="home"> Home </h3></li>
                     <li onclick="toCalendar()"><h3 class="calendar">Calendar</h3></li>
                     <li onclick="toAbout()"><h3 class="aboutus">About Us</h3></li>
@@ -41,7 +47,8 @@
                     <li><button class="logoutbutton" onclick="logout()"> Logout </button></li>
                 </ul>
             </div>
-                    
+                
+            <!-- Mobile navbar from line 52 to 65 -->
             <div class="mobileNav">
                 <img onclick="toHome()" src="../static/images/clientryLogoDark.png" alt="clientry" class="clientryLogo">
                 <img src="../static/images/menu.png" alt="menu" class="menuButton">
@@ -59,7 +66,7 @@
         </div>
         <hr>
         
-        
+        <!-- The alert panel that pops up if you attempt to delete an event (initially hidden) -->
         <div class="warningPanelCenter hide">
             <div class="warningPanel">
                 <h3>Are You Sure You Wish To Delete This Event?</h3>
@@ -69,6 +76,7 @@
                 </div>
             </div>
         </div>
+        <!-- The event panel that shows up when you want to edit an event (initially hidden) -->
         <div class="editEvent">
             <div class="editPanel">
                 <div onclick="editToggle()" class="closeButtonContainer">
@@ -97,7 +105,8 @@
                 </form>
             </div>
         </div>
-        <!-- <h1>Your Events</h1> -->
+        
+        <!-- The past, upcoming, and todays events are displayed here -->
         <div id="dbInfo">
                 <h1>Todays Events</h1>
                 <div id="todaysEvents"></div> <hr>
@@ -107,10 +116,12 @@
                 <div id="pastEvents"></div>
         </div>
     
-    <footer>
-        <img onclick="toCalendar()" src="../static/images/plus_hollow.svg" class ="footbutton" alt="event button">
-    </footer>
+        <!-- The + button that brings you to the calendar page when you want to add events -->
+        <footer>
+            <img onclick="toCalendar()" src="../static/images/plus_hollow.svg" class ="footbutton" alt="event button">
+        </footer>
     <script>
+        //Function that toggles the edit event panel
         function editToggle() {
         $(".editEvent").slideToggle();
     }

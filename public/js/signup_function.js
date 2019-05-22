@@ -84,7 +84,17 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var token = result.credential.accessToken;
   // The signed-in user info.
   var user = result.user;
+  console.log(result.user)
   // ...
+  
+  var firebase = app_firebase;
+  // For current user
+  // Create this user node in the datebase
+      firebase.database().ref("users/"+user.uid).update(
+  {
+      "name":result.user.displayName, 
+      "email":result.user.email
+      });
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;

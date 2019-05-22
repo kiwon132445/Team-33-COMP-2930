@@ -24,6 +24,7 @@ ul {
 .personInfo {
     text-align: center;
 }
+
 #story {
     text-align: center;
 }
@@ -31,6 +32,7 @@ ul {
     font-size: 16pt;
     margin-left: 10%;
     margin-right: 10%;
+    padding-top: 0;
 }
 #story img {
     height: 75pt;
@@ -40,7 +42,7 @@ ul {
     padding-left: 1em;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 880px) {
     #aboutUsList li {
         display: flex;
     }
@@ -51,5 +53,9 @@ ul {
     .imgandname {
         padding-left: 2em;
     }
+    #aboutUsList {
+        text-align: center;
+    }
+
 }
 

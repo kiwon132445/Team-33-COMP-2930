@@ -50,6 +50,12 @@ function editEvent(eventid) {
 //Function to delete data for event 'x'
 function deleteEvent(eventid) {
     //Delete the event from 'events'
+
     var deleteevent = dB.ref('events/' + eventid);
     deleteevent.remove(eventid);s 
-}
+
+    setTimeout(() => {
+      location.reload();
+    }, 200);
+};
+
