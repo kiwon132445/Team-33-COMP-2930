@@ -1,4 +1,4 @@
-i<!DOCTYPE html>
+.<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@ i<!DOCTYPE html>
 
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     
-    <link type="text/css" rel="stylesheet" href="../static/css/login.css" />
+    <link type="text/css" rel="stylesheet" href="./static/css/login.css" />
 
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -28,24 +28,24 @@ i<!DOCTYPE html>
     <title>Clientry</title>
 
   </head>
-  <body>
+  <body class="loginBody">
     <div class="main-div" id="login_div">
         <div class="logoDiv">
-            <img class="logo" src="../static/images/clientryLogoDark.png" style="margin-top: -30px" alt="logo">
+            <img class="logo" src="../static/images/clientryLogo.png" style="margin-top: -30px" alt="logo">
         </div>
           <h2 class="header2"> Put your energy into your craft, <br> and allow Clientry to take care of the rest.</h2>
           <br><br>
           <form>
-            <input type="email" placeholder="Email..." id="email_field">
-            <input type="password" placeholder="Password..." id="password_field">
+            <input type="email" placeholder="Email Address" id="email_field">
+            <input type="password" placeholder="Password" id="password_field">
           </form>
-          <button onclick="login()"> Login to your Account </button>
+          <button onclick="login()"> LOG IN </button>
           <p class="google"> or Sign In with Google </p> <br>
           <button onclick="googleLogin()" class="social-button" >
             <img alt="Google Logo" src="../static/images/google.png">
             </button>      
           
-        </div>
+    </div>
     
         <div id="signup">
           <div id="firebaseui-auth-container"></div>
