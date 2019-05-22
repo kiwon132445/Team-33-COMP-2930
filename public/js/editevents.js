@@ -1,15 +1,28 @@
+/** The editEvent function is connected to the Edit Button of each Event List Item Created by displayevent.js
+ * The first sub-function will get the details of the event to be edited and apply it to the form.
+ * The second sub-function is an onSubmit function and will update the changed data to the event key.
+ * 
+ * The deleteEvent function is connect to the Delete Button of each Event List Item Createed by displayevent.js
+ * After pressing "Okay" on a confirmation panel, the function will delete the entire event's key under "events".
+ * 
+ * @author Kibum Park
+ * @version 4.0
+ * 
+ */
+
+ //Firebase variables
 var firebase = app_firebase;  
 var dB = firebase.database();
 var authRef = firebase.auth();
 
-//Function to set Edit Panel with previous details of event 'x'
-function editEvent(x) {
-  //Get previous details
-  var eventpath = dB.ref('events/' + x);
+//Function to set Edit Panel with previous details of event with id "eventid"
+function editEvent(eventid) {
+  //Get previous details of the event
+  var eventpath = dB.ref('events/' + eventid);
   eventpath.on('value', snap => {
     eventRef = JSON.stringify(snap.val(), null, 3);
     var editlist = JSON.parse(eventRef);
-    //Apply previous details to Edit Panel
+    //Apply previous details of event to Edit Panel
     var editform = document.getElementById('instantForm')
     editform.elements[0].value = editlist.eventname;
     editform.elements[1].value = editlist.eventStartTime;
@@ -23,7 +36,7 @@ function editEvent(x) {
     newlist = $(this).serializeArray();
     event.preventDefault();
 
-    dB.ref('events/' + x).update({
+    dB.ref('events/' + eventid).update({
       eventname: newlist[0].value,
       eventStartTime: newlist[1].value,
       eventEndTime: newlist[2].value,
@@ -35,23 +48,8 @@ function editEvent(x) {
 
 
 //Function to delete data for event 'x'
-function deleteEvent(x) {
+function deleteEvent(eventid) {
     //Delete the event from 'events'
-    var deleteevent = dB.ref('events/' + x);
-    deleteevent.remove(x);
-    //Delete the event from 'users'
-    var deleteuserevent = db.ref('users/' + user.uid + '/eventsCreated');
-    
-    deleteuserevent.on('value', snap => {
-        var valref = JSON.stringify(snap.val(), null, 3) 
-        var keyref = JSON.stringify(snap.key(), null, 3) 
-        var vallist = JSON.parse(valref);
-        var keylist = JSON.parse(keyref);
-        for (var i = 0; i < vallist.length; i++) {
-          if (valllist[i] == x) {
-            deleteuserevent.child(keylist[i]).remove();
-          }
-        }
-  })
-  
+    var deleteevent = dB.ref('events/' + eventid);
+    deleteevent.remove(eventid);s 
 }
