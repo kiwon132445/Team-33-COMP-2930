@@ -1,8 +1,9 @@
 body{
   font-family:'Roboto';
   margin: 0;
-  background-color: whitesmoke;
   overflow-y: hidden;
+  min-height: 100%;
+  background: linear-gradient(126.67deg, #5A57FC -7.04%, rgba(0, 224, 157, 0.63) 103.8%);
 }
 
 
